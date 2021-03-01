@@ -8,9 +8,10 @@ export default class App extends Component {
         <div>
           <h3>Hi There!</h3>
           <p>Please enter your username:</p>
-          <form onSubmit={this.props.setUsername}>
+          <form>
             <input
               type="text"
+              placeholder="Enter username"
               value={this.props.username}
               onChange={this.props.handleUsername}
             />
