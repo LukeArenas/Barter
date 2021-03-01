@@ -2,7 +2,7 @@ import './App.css'
 import React, { Component } from 'react'
 import Welcome from './pages/Welcome'
 import axios from 'axios'
-import { Switch } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 export default class App extends Component {
   constructor() {
@@ -27,7 +27,11 @@ export default class App extends Component {
     return (
       <div>
         <Switch>
-          <Welcome handleUsername={this.handleUsername} />
+          <Route
+            exact
+            path="/"
+            render={() => <Welcome handleUsername={this.handleUsername} />}
+          />
         </Switch>
       </div>
     )
