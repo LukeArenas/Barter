@@ -8,7 +8,8 @@ const Listing = new Schema(
     description: { type: String, required: true },
     price: { type: Number, required: true },
     category: { type: String, required: true },
-    condition: { type: String, required: true }
+    condition: { type: String, required: true },
+    seller_id: { type: Schema.Types.ObjectId, ref: 'sellers' }
   },
   { timestamps: true }
 )
