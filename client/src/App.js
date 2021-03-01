@@ -1,6 +1,8 @@
 import './App.css'
 import React, { Component } from 'react'
 import Welcome from './pages/Welcome'
+import axios from 'axios'
+import { Switch } from 'react-router-dom'
 
 export default class App extends Component {
   constructor() {
@@ -9,7 +11,8 @@ export default class App extends Component {
       username: '',
       recentlyViewed: [],
       selectedListing: '',
-      addedToCart: []
+      addedToCart: [],
+      page: 0
     }
   }
 
@@ -18,14 +21,14 @@ export default class App extends Component {
   handleUsername = (event) => {
     this.setState({ username: event.target.value })
   }
+
   render() {
     console.log(this.state)
     return (
       <div>
-        <Welcome
-          // username={this.state.username}
-          handleUsername={this.handleUsername}
-        />
+        <Switch>
+          <Welcome handleUsername={this.handleUsername} />
+        </Switch>
       </div>
     )
   }
