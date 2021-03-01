@@ -1,6 +1,7 @@
 import './App.css'
 import React, { Component } from 'react'
 import Welcome from './pages/Welcome'
+import Buy from './pages/Buy'
 import axios from 'axios'
 import { Switch, Route } from 'react-router-dom'
 
@@ -32,6 +33,7 @@ export default class App extends Component {
             path="/"
             render={() => <Welcome handleUsername={this.handleUsername} />}
           />
+          <Route path="/buy" render={() => <Buy />} />
         </Switch>
       </div>
     )
