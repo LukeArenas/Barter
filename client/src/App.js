@@ -1,8 +1,19 @@
 import './App.css'
-import React from 'react'
+import React, { Component } from 'react'
+import Welcome from './pages/Welcome'
 
 export default class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      username: ''
+    }
+  }
   render() {
-    return <div></div>
+    return (
+      <div>
+        <Welcome />
+      </div>
+    )
   }
 }
