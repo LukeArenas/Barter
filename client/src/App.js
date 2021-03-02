@@ -16,14 +16,37 @@ export default class App extends Component {
       username: 'test',
       recentlyViewed: [],
       selectedListing: '',
-      addedToCart: []
+      addedToCart: [],
+      allSellers: []
     }
+  }
+
+  componentDidMount() {
+    this.getSellers()
   }
 
   //METHODS
 
   handleUsername = (event) => {
     this.setState({ username: event.target.value })
+  }
+
+  getSellers = async () => {
+    const response = await axios.get(`${BASE_URL}/sellers`)
+    this.setState({ allSellers: response.data.sellers })
+    console.log(response.data.sellers)
+  }
+
+  createSeller = async () => {
+    const existingUser = this.state.allSellers.filter((seller) => {
+      return seller.seller === this.state.username
+    })
+    existingUser.length
+      ? console.log('user exists')
+      : await axios.post(`${BASE_URL}/sellers`, {
+          seller: this.state.username,
+          customerRating: Math.ceil(Math.random() * 50) / 10
+        })
   }
 
   viewListing = (event) => {
@@ -75,7 +98,12 @@ export default class App extends Component {
           <Route
             exact
             path="/"
-            render={() => <Welcome handleUsername={this.handleUsername} />}
+            render={() => (
+              <Welcome
+                handleUsername={this.handleUsername}
+                createSeller={this.createSeller}
+              />
+            )}
           />
           <Route
             path="/buy"

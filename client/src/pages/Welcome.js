@@ -10,6 +10,7 @@ export default class Welcome extends Component {
   }
   handleWelcomeSubmit = () => {
     this.setState({ showBuyPage: true })
+    this.props.createSeller()
   }
 
   render() {
