@@ -26,6 +26,10 @@ export default class App extends Component {
     console.log(event)
   }
 
+  handleSelection = (id) => {
+    this.setState({ selectedListing: id })
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -42,11 +46,12 @@ export default class App extends Component {
               <Buy
                 recentlyViewed={this.state.recentlyViewed}
                 viewListing={this.viewListing}
+                handleSelection={this.handleSelection}
                 {...reactProps}
               />
             )}
           />
-          {/* <Route path="/item-details/:id" render={() => <ItemDetails />} /> */}
+          <Route path="/item-details/:id" render={() => <ItemDetails />} />
         </Switch>
       </div>
     )

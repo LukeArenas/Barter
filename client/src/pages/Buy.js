@@ -34,6 +34,7 @@ export default class Buy extends Component {
               <ListingThumbnail
                 listing={listing}
                 viewListing={this.props.viewListing}
+                handleSelection={this.props.handleSelection}
                 {...this.props}
               />
             )
