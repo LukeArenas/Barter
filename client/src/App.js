@@ -4,7 +4,7 @@ import Welcome from './pages/Welcome'
 import Buy from './pages/Buy'
 import ItemDetails from './pages/ItemDetails'
 import Cart from './pages/Cart'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, NavLink } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from './globals'
 
@@ -54,6 +54,10 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        <nav>
+          <NavLink to="/buy">Buy</NavLink>
+          <NavLink to="/cart">Cart</NavLink>
+        </nav>
         <Switch>
           <Route
             exact
