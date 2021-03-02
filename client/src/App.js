@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Welcome from './pages/Welcome'
 import Buy from './pages/Buy'
 import ItemDetails from './pages/ItemDetails'
+import Cart from './pages/Cart'
 import { Switch, Route } from 'react-router-dom'
 
 export default class App extends Component {
@@ -58,12 +59,17 @@ export default class App extends Component {
           />
           <Route
             path="/item-details/:id"
-            render={() => (
+            render={(reactProps) => (
               <ItemDetails
                 selectedListing={this.state.selectedListing}
                 addToCart={this.addToCart}
+                {...reactProps}
               />
             )}
+          />
+          <Route
+            path="/cart"
+            render={() => <Cart addedToCart={this.state.addedToCart} />}
           />
         </Switch>
       </div>

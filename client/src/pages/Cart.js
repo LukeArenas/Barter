@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
+import CartItem from '../components/CartItem'
 
-export default class App extends Component {
+export default class Cart extends Component {
   render() {
-    return <div></div>
+    return (
+      <div>
+        {this.props.addedToCart.map(() => (
+          <CartItem />
+        ))}
+      </div>
+    )
   }
 }
