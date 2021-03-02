@@ -5,6 +5,8 @@ import Buy from './pages/Buy'
 import ItemDetails from './pages/ItemDetails'
 import Cart from './pages/Cart'
 import { Switch, Route } from 'react-router-dom'
+import axios from 'axios'
+import { BASE_URL } from './globals'
 
 export default class App extends Component {
   constructor() {
@@ -31,10 +33,14 @@ export default class App extends Component {
     this.setState({ selectedListing: id })
   }
 
-  addToCart = () => {
+  addToCart = async () => {
+    const itemToAdd = await axios.get(
+      `${BASE_URL}/listings/${this.state.selectedListing}`
+    )
     const currentCart = this.state.addedToCart
-    const newCart = [...currentCart, this.state.selectedListing]
+    const newCart = [...currentCart, itemToAdd.data.listing]
     this.setState({ addedToCart: newCart })
+    console.log(itemToAdd.data.listing)
   }
 
   render() {
