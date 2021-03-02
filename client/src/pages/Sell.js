@@ -1,15 +1,35 @@
 import React, { Component } from 'react'
+import ListingThumbnail from '../components/ListingThumbnail'
+import axios from 'axios'
+import { BASE_URL } from '../globals'
 
 export default class Sell extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
+      username: this.props.username,
+      listings: [],
       title: '',
       condition: '',
       description: '',
       price: 0,
       photo: '',
       category: ''
+    }
+  }
+
+  componentDidMount() {
+    this.getListingByUser()
+  }
+
+  getListingByUser = async () => {
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/listings/user/603d57f33b8a020518b63c8a`
+      )
+      this.setState({ listings: response.data.userListings })
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -66,6 +86,19 @@ export default class Sell extends Component {
           </select>
           <input type="submit" value="List Item" />
         </form>
+        <div className="product-container">
+          {this.state.listings.map((listing) => {
+            return (
+              <ListingThumbnail
+                listing={listing}
+                viewListing={this.props.viewListing}
+                handleSelection={this.props.handleSelection}
+                updateRecentlyViewed={this.updateRecentlyViewed}
+                {...this.props}
+              />
+            )
+          })}
+        </div>
       </div>
     )
   }

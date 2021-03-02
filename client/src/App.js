@@ -89,7 +89,10 @@ export default class App extends Component {
               />
             )}
           />
-          <Route path="/sell" render={() => <Sell />} />
+          <Route
+            path="/sell"
+            render={() => <Sell username={this.state.username} />}
+          />
           <Route
             path="/item-details/:id"
             render={(reactProps) => (

@@ -12,8 +12,8 @@ const createListing = async (req, res) => {
 
 const getListingByUser = async (req, res) => {
   try {
-    const { user_id } = req.params
-    const userListings = await Listing.find({ seller_id: user_id })
+    const { id } = req.params
+    const userListings = await Listing.find({ seller_id: id })
     res.status(200).json({ userListings })
   } catch (error) {
     res.json(`Error with getListingByUser: ${error}`)
