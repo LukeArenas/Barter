@@ -30,8 +30,13 @@ export default class App extends Component {
     this.setState({ selectedListing: id })
   }
 
+  addToCart = () => {
+    const currentCart = this.state.addedToCart
+    const newCart = [...currentCart, this.state.selectedListing]
+    this.setState({ addedToCart: newCart })
+  }
+
   render() {
-    console.log(this.state)
     return (
       <div>
         <Switch>
@@ -54,7 +59,10 @@ export default class App extends Component {
           <Route
             path="/item-details/:id"
             render={() => (
-              <ItemDetails selectedListing={this.state.selectedListing} />
+              <ItemDetails
+                selectedListing={this.state.selectedListing}
+                addToCart={this.addToCart}
+              />
             )}
           />
         </Switch>
