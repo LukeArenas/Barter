@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 
-export default class App extends Component {
+export default class Welcome extends Component {
   constructor() {
     super()
     this.state = {

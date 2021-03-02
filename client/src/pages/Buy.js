@@ -1,7 +1,38 @@
+import axios from 'axios'
 import React, { Component } from 'react'
+import { BASE_URL } from '../globals'
 
-export default class App extends Component {
+export default class Buy extends Component {
+  constructor() {
+    super()
+    this.state = {
+      listings: []
+    }
+  }
+  componentDidMount() {
+    this.getAllListings()
+  }
+
+  getAllListings = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/listings`)
+      this.setState({ listings: response.data.allListings })
+      console.log(this.state.listings)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   render() {
-    return <div>hello</div>
+    return (
+      <div>
+        {/* <Header /> */}
+        <div className="product-container">
+          {this.state.listings.map(() => {})}
+        </div>
+        <div className="recently-viewed-container">recently viewed</div>
+        {/* <Footer /> */}
+      </div>
+    )
   }
 }

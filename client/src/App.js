@@ -2,14 +2,13 @@ import './App.css'
 import React, { Component } from 'react'
 import Welcome from './pages/Welcome'
 import Buy from './pages/Buy'
-import axios from 'axios'
 import { Switch, Route } from 'react-router-dom'
 
 export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      username: '',
+      username: 'test',
       recentlyViewed: [],
       selectedListing: '',
       addedToCart: [],
