@@ -7,12 +7,20 @@ export default class ListingThumbnail extends Component {
     this.props.updateRecentlyViewed()
   }
   render() {
-    const { photo, price, title, _id } = this.props.listing
+    const { photo, price, title, _id, seller_id } = this.props.listing
     return (
-      <div value={_id} onClick={this.handleClick}>
-        <img src={photo} alt={title} />
-        <h4>{title}</h4>
-        <p>{price}</p>
+      <div>
+        <div value={_id} onClick={this.handleClick}>
+          <img src={photo} alt={title} />
+          <h4>{title}</h4>
+          <p>{price}</p>
+        </div>
+        {seller_id === '603d57f33b8a020518b63c8a' &&
+        this.props.requestFrom === 'sell' ? (
+          <button value={_id} onClick={this.props.deleteListing}>
+            Delete
+          </button>
+        ) : null}
       </div>
     )
   }

@@ -11,18 +11,19 @@ export default class ItemDetails extends Component {
       description: '',
       photo: '',
       price: 0,
-      title: ''
+      title: '',
+      vendor: {}
     }
   }
   componentDidMount() {
     this.displayListing()
+    this.getSellerInfo()
   }
 
   displayListing = async () => {
     const response = await axios.get(
       `${BASE_URL}/listings/${this.props.selectedListing}`
     )
-    console.log(response.data)
     const {
       category,
       condition,
@@ -46,6 +47,14 @@ export default class ItemDetails extends Component {
     this.props.addToCart()
   }
 
+  getSellerInfo = async () => {
+    const response = await axios.get(
+      `${BASE_URL}/sellers/603d57f33b8a020518b63c8a`
+    )
+    this.setState({ vendor: response.data.seller[0] })
+    console.log(this.state.vendor)
+  }
+
   render() {
     return (
       <div>
@@ -55,6 +64,8 @@ export default class ItemDetails extends Component {
           <p>{this.state.price}</p>
           <p>{this.state.condition}</p>
           <p>{this.state.description}</p>
+          <p>{this.state.vendor.seller}</p>
+          <p>{this.state.vendor.customerRating}</p>
         </div>
         <button onClick={this.handleClick}>Add To Cart</button>
         <button

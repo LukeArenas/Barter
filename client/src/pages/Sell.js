@@ -7,6 +7,7 @@ export default class Sell extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      requestFrom: 'sell',
       username: this.props.username,
       listings: [],
       title: '',
@@ -31,6 +32,11 @@ export default class Sell extends Component {
     } catch (error) {
       console.log(error)
     }
+  }
+
+  deleteListing = async (event) => {
+    await axios.delete(`${BASE_URL}/listings/${event.target.value}`)
+    this.getListingByUser()
   }
 
   handleSubmit = async (e) => {
@@ -94,6 +100,7 @@ export default class Sell extends Component {
           <input type="text" placeholder="price" onChange={this.setPrice} />
           <input type="text" placeholder="photo url" onChange={this.setPhoto} />
           <select onChange={this.setCategory}>
+            <option value="miscellaneous">Miscellaneous</option>
             <option value="toys">Toys</option>
             <option value="appliances">Appliances</option>
             <option value="homegoods">Homegoods</option>
@@ -101,7 +108,6 @@ export default class Sell extends Component {
             <option value="electronics">Electronics</option>
             <option value="clothing">Clothing</option>
             <option value="outdoor">Outdoor</option>
-            <option value="miscellaneous">Miscellaneous</option>
           </select>
           <input type="submit" value="List Item" />
         </form>
@@ -113,6 +119,8 @@ export default class Sell extends Component {
                 viewListing={this.props.viewListing}
                 handleSelection={this.props.handleSelection}
                 updateRecentlyViewed={this.updateRecentlyViewed}
+                deleteListing={this.deleteListing}
+                requestFrom={this.state.requestFrom}
                 {...this.props}
               />
             )
