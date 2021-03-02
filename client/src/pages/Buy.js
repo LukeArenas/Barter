@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import { BASE_URL } from '../globals'
+import ListingThumbnail from '../components/ListingThumbnail'
 
 export default class Buy extends Component {
   constructor() {
@@ -28,7 +29,9 @@ export default class Buy extends Component {
       <div>
         {/* <Header /> */}
         <div className="product-container">
-          {this.state.listings.map(() => {})}
+          {this.state.listings.map((listing) => {
+            return <ListingThumbnail listing={listing} />
+          })}
         </div>
         <div className="recently-viewed-container">recently viewed</div>
         {/* <Footer /> */}
