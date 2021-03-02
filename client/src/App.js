@@ -11,8 +11,7 @@ export default class App extends Component {
       username: 'test',
       recentlyViewed: [],
       selectedListing: '',
-      addedToCart: [],
-      page: 0
+      addedToCart: []
     }
   }
 
