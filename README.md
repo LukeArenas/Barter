@@ -71,3 +71,5 @@ Barter is a community-focused ecommerce app. It allows users to both list items 
 ***
 
 ### ***Credits***
+
+* [Bits and Pieces](https://blog.bitsrc.io/must-know-concepts-of-react-router-fb9c8cc3c12)

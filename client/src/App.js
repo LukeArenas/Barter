@@ -2,6 +2,7 @@ import './App.css'
 import React, { Component } from 'react'
 import Welcome from './pages/Welcome'
 import Buy from './pages/Buy'
+import ItemDetails from './pages/ItemDetails'
 import { Switch, Route } from 'react-router-dom'
 
 export default class App extends Component {
@@ -21,6 +22,10 @@ export default class App extends Component {
     this.setState({ username: event.target.value })
   }
 
+  viewListing = (event) => {
+    console.log(event)
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -31,7 +36,16 @@ export default class App extends Component {
             path="/"
             render={() => <Welcome handleUsername={this.handleUsername} />}
           />
-          <Route path="/buy" render={() => <Buy />} />
+          <Route
+            path="/buy"
+            render={() => (
+              <Buy
+                recentlyViewed={this.state.recentlyViewed}
+                viewListing={this.viewListing}
+              />
+            )}
+          />
+          <Route path="/item-details" render={() => <ItemDetails />} />
         </Switch>
       </div>
     )

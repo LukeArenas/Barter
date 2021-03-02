@@ -18,6 +18,7 @@ export default class Buy extends Component {
     try {
       const response = await axios.get(`${BASE_URL}/listings`)
       this.setState({ listings: response.data.allListings })
+      console.log(response.data)
     } catch (error) {
       console.log(error)
     }
@@ -29,10 +30,17 @@ export default class Buy extends Component {
         {/* <Header /> */}
         <div className="product-container">
           {this.state.listings.map((listing) => {
-            return <ListingThumbnail listing={listing} />
+            return (
+              <ListingThumbnail
+                listing={listing}
+                viewListing={this.props.viewListing}
+              />
+            )
           })}
         </div>
-        <div className="recently-viewed-container">recently viewed</div>
+        <div className="recently-viewed-container">
+          recently viewed{this.props.recentlyViewed.length}
+        </div>
         {/* <Footer /> */}
       </div>
     )
