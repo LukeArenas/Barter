@@ -22,6 +22,7 @@ export default class ItemDetails extends Component {
     const response = await axios.get(
       `${BASE_URL}/listings/${this.props.selectedListing}`
     )
+    console.log(response.data)
     const {
       category,
       condition,
