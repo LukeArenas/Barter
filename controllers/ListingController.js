@@ -29,6 +29,16 @@ const getAllListings = async (req, res) => {
   }
 }
 
+const getListingById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const listing = await Listing.findOne({ _id: id })
+    return res.status(200).json({ listing })
+  } catch (error) {
+    res.json(`Error with getListingById: ${error}`)
+  }
+}
+
 const deleteListing = async (req, res) => {
   try {
     const { id } = req.params
@@ -43,5 +53,6 @@ module.exports = {
   createListing,
   getListingByUser,
   getAllListings,
-  deleteListing
+  deleteListing,
+  getListingById
 }

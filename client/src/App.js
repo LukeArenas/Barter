@@ -51,7 +51,12 @@ export default class App extends Component {
               />
             )}
           />
-          <Route path="/item-details/:id" render={() => <ItemDetails />} />
+          <Route
+            path="/item-details/:id"
+            render={() => (
+              <ItemDetails selectedListing={this.state.selectedListing} />
+            )}
+          />
         </Switch>
       </div>
     )
