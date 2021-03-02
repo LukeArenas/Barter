@@ -38,14 +38,15 @@ export default class App extends Component {
           />
           <Route
             path="/buy"
-            render={() => (
+            render={(reactProps) => (
               <Buy
                 recentlyViewed={this.state.recentlyViewed}
                 viewListing={this.viewListing}
+                {...reactProps}
               />
             )}
           />
-          <Route path="/item-details" render={() => <ItemDetails />} />
+          {/* <Route path="/item-details/:id" render={() => <ItemDetails />} /> */}
         </Switch>
       </div>
     )
