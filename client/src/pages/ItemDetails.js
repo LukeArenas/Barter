@@ -40,6 +40,11 @@ export default class ItemDetails extends Component {
       title: title
     })
   }
+
+  handleClick = () => {
+    this.props.addToCart()
+  }
+
   render() {
     return (
       <div>
@@ -50,7 +55,7 @@ export default class ItemDetails extends Component {
           <p>{this.state.condition}</p>
           <p>{this.state.description}</p>
         </div>
-        <button onClick={this.props.addToCart}>Add To Cart</button>
+        <button onClick={this.handleClick}>Add To Cart</button>
         <button
           onClick={() => {
             this.props.history.push('/cart')

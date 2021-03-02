@@ -1,7 +1,72 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default class App extends Component {
+export default class Sell extends Component {
+  constructor() {
+    super()
+    this.state = {
+      title: '',
+      condition: '',
+      description: '',
+      price: 0,
+      photo: '',
+      category: ''
+    }
+  }
+
+  setTitle = (event) => {
+    this.setState({ title: event.target.value })
+  }
+
+  setCondition = (event) => {
+    this.setState({ condition: event.target.value })
+  }
+
+  setDescription = (event) => {
+    this.setState({ description: event.target.value })
+  }
+
+  setPrice = (event) => {
+    this.setState({ price: parseInt(event.target.value) })
+  }
+
+  setPhoto = (event) => {
+    this.setState({ photo: event.target.value })
+  }
+
+  setCategory = (event) => {
+    this.setState({ category: event.target.value })
+    console.log(this.state)
+  }
+
   render() {
-    return <div></div>
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" placeholder="title" onChange={this.setTitle} />
+          <select onChange={this.setCondition}>
+            <option value="new">New</option>
+            <option value="used">Used</option>
+          </select>
+          <input
+            type="text"
+            placeholder="description"
+            onChange={this.setDescription}
+          />
+          <input type="text" placeholder="price" onChange={this.setPrice} />
+          <input type="text" placeholder="photo url" onChange={this.setPhoto} />
+          <select onChange={this.setCategory}>
+            <option value="toys">Toys</option>
+            <option value="appliances">Appliances</option>
+            <option value="homegoods">Homegoods</option>
+            <option value="books">Books</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="outdoor">Outdoor</option>
+            <option value="miscellaneous">Miscellaneous</option>
+          </select>
+          <input type="submit" value="List Item" />
+        </form>
+      </div>
+    )
   }
 }

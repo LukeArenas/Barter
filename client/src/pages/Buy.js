@@ -26,7 +26,6 @@ export default class Buy extends Component {
   render() {
     return (
       <div>
-        {/* <Header /> */}
         <div className="product-container">
           {this.state.listings.map((listing) => {
             return (
@@ -34,13 +33,24 @@ export default class Buy extends Component {
                 listing={listing}
                 viewListing={this.props.viewListing}
                 handleSelection={this.props.handleSelection}
+                updateRecentlyViewed={this.updateRecentlyViewed}
                 {...this.props}
               />
             )
           })}
         </div>
         <div className="recently-viewed-container">
-          recently viewed{this.props.recentlyViewed.length}
+          {/* {this.props.recentlyViewed.map((listing) => {
+            return (
+              <ListingThumbnail
+                listing={listing}
+                viewListing={this.props.viewListing}
+                handleSelection={this.props.handleSelection}
+                updateRecentlyViewed={this.updateRecentlyViewed}
+                {...this.props}
+              />
+            )
+          })} */}
         </div>
         {/* <Footer /> */}
       </div>

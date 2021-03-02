@@ -2,6 +2,7 @@ import './App.css'
 import React, { Component } from 'react'
 import Welcome from './pages/Welcome'
 import Buy from './pages/Buy'
+import Sell from './pages/Sell'
 import ItemDetails from './pages/ItemDetails'
 import Cart from './pages/Cart'
 import { Switch, Route, NavLink } from 'react-router-dom'
@@ -51,11 +52,23 @@ export default class App extends Component {
     console.log(this.state.addedToCart)
   }
 
+  updateRecentlyViewed = async () => {
+    const itemToAdd = await axios.get(
+      `${BASE_URL}/listings/${this.state.selectedListing}`
+    )
+    const currentViewed = this.state.recentlyViewed
+    const newViewed = [...currentViewed, itemToAdd.data.listing]
+    this.setState({ recentlyViewed: newViewed })
+    console.log(newViewed)
+  }
+
   render() {
     return (
-      <div>
+      <div className="app">
         <nav>
+          <h1>freetrade</h1>
           <NavLink to="/buy">Buy</NavLink>
+          <NavLink to="/sell">Sell</NavLink>
           <NavLink to="/cart">Cart</NavLink>
         </nav>
         <Switch>
@@ -71,10 +84,12 @@ export default class App extends Component {
                 recentlyViewed={this.state.recentlyViewed}
                 viewListing={this.viewListing}
                 handleSelection={this.handleSelection}
+                updateRecentlyViewed={this.updateRecentlyViewed}
                 {...reactProps}
               />
             )}
           />
+          <Route path="/sell" render={() => <Sell />} />
           <Route
             path="/item-details/:id"
             render={(reactProps) => (
@@ -95,6 +110,7 @@ export default class App extends Component {
             )}
           />
         </Switch>
+        <footer>Contact Us:</footer>
       </div>
     )
   }
