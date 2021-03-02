@@ -43,6 +43,14 @@ export default class App extends Component {
     console.log(itemToAdd.data.listing)
   }
 
+  removeFromCart = (id) => {
+    const newCart = this.state.addedToCart.filter((item) => {
+      return item._id !== id
+    })
+    this.setState({ addedToCart: newCart })
+    console.log(this.state.addedToCart)
+  }
+
   render() {
     return (
       <div>
@@ -75,7 +83,12 @@ export default class App extends Component {
           />
           <Route
             path="/cart"
-            render={() => <Cart addedToCart={this.state.addedToCart} />}
+            render={() => (
+              <Cart
+                addedToCart={this.state.addedToCart}
+                removeFromCart={this.removeFromCart}
+              />
+            )}
           />
         </Switch>
       </div>
