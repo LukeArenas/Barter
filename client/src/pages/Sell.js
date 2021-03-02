@@ -10,11 +10,11 @@ export default class Sell extends Component {
       username: this.props.username,
       listings: [],
       title: '',
-      condition: '',
+      condition: 'new',
       description: '',
       price: 0,
       photo: '',
-      category: ''
+      category: 'miscellaneous'
     }
   }
 
@@ -28,6 +28,25 @@ export default class Sell extends Component {
         `${BASE_URL}/listings/user/603d57f33b8a020518b63c8a`
       )
       this.setState({ listings: response.data.userListings })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const response = await axios.post(`${BASE_URL}/listings`, {
+        title: this.state.title,
+        condition: this.state.condition,
+        description: this.state.description,
+        price: this.state.price,
+        photo: this.state.photo,
+        category: this.state.category,
+        seller_id: '603d57f33b8a020518b63c8a'
+      })
+      this.getListingByUser()
+      console.log(response)
     } catch (error) {
       console.log(error)
     }
