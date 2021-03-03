@@ -6,7 +6,7 @@
 
 .app {
   text-align: center;
-  height: 100vh;
+  height: 80vh;
   width: 80vw;
   background-color: white;
   padding-top: 10vh;
@@ -166,4 +166,8 @@ footer {
 
 .details-img {
   max-height: 40vh;
+}
+
+.item-details-page {
+  margin-top: 1em;
 }
