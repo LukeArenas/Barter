@@ -105,12 +105,12 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
-        <nav>
+        <header>
           <h1>freetrade</h1>
           <NavLink to="/buy">Buy</NavLink>
           <NavLink to="/sell">Sell</NavLink>
           <NavLink to="/cart">Cart</NavLink>
-        </nav>
+        </header>
         <Switch>
           <Route
             exact
@@ -168,7 +168,11 @@ export default class App extends Component {
             )}
           />
         </Switch>
-        <footer>Contact Us:</footer>
+        <footer>
+          <h3>Contact Us:</h3>
+          <p>Phone: 111-111-1111</p>
+          <p>Email: customerservice@freetrade.com</p>
+        </footer>
       </div>
     )
   }

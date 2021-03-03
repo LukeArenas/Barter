@@ -1,3 +1,24 @@
 .app {
   text-align: center;
+  height: 100vh;
+}
+
+#root {
+  height: 100vh;
+}
+
+header {
+  background-color: #2ab7ca;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #2ab7ca;
 }
