@@ -46,6 +46,7 @@ export default class Buy extends Component {
             )
           })}
         </div>
+        <h3>Your Recently Viewed Items:</h3>
         <div className="recently-viewed-container">
           {this.props.recentlyViewed.map((listing) => {
             return (

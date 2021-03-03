@@ -1,6 +1,7 @@
 .app {
   text-align: center;
   height: 100vh;
+  background-color: rgb(224, 219, 219);
 }
 
 #root {
@@ -35,13 +36,28 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  max-width: 80vw;
+  background-color: white;
+  width: 80vw;
 }
 
 .recently-viewed-container {
   display: flex;
   justify-content: space-evenly;
-  background-color: indianred;
+  background-color: white;
+  width: 80vw;
+}
+
+/* Sell Page */
+
+.sell-page {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10vw;
+}
+
+form {
+  padding: 5vh 0;
+  background-color: white;
   width: 80vw;
 }
 
@@ -54,4 +70,10 @@ footer {
 
 .thumbnail-img {
   max-width: 10vw;
+}
+
+/* Item Details */
+
+.details-img {
+  max-height: 40vh;
 }

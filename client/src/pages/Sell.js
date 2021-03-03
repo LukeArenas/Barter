@@ -85,7 +85,7 @@ export default class Sell extends Component {
 
   render() {
     return (
-      <div>
+      <div className="sell-page">
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="title" onChange={this.setTitle} />
           <select onChange={this.setCondition}>

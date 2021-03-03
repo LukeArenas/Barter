@@ -59,7 +59,11 @@ export default class ItemDetails extends Component {
   render() {
     return (
       <div>
-        <img src={this.state.photo} alt={this.state.title} />
+        <img
+          src={this.state.photo}
+          alt={this.state.title}
+          className="details-img"
+        />
         <div>
           <h3>{this.state.title}</h3>
           <p>{this.state.price}</p>
