@@ -103,6 +103,7 @@ export default class Sell extends Component {
             placeholder="price"
             onValueChange={this.setPrice}
             decimalScale={2}
+            prefix="$"
           />
           {/* $<input type="text" placeholder="price" onChange={this.setPrice} /> */}
           <input type="text" placeholder="photo url" onChange={this.setPhoto} />
