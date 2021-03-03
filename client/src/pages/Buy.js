@@ -40,7 +40,7 @@ export default class Buy extends Component {
           })}
         </div>
         <div className="recently-viewed-container">
-          {/* {this.props.recentlyViewed.map((listing) => {
+          {this.props.recentlyViewed.map((listing) => {
             return (
               <ListingThumbnail
                 listing={listing}
@@ -50,9 +50,8 @@ export default class Buy extends Component {
                 {...this.props}
               />
             )
-          })} */}
+          })}
         </div>
-        {/* <Footer /> */}
       </div>
     )
   }

@@ -8,7 +8,6 @@ export default class ListingThumbnail extends Component {
   }
   render() {
     const { photo, price, title, _id, seller_id } = this.props.listing
-    console.log(this.props)
     return (
       <div>
         <div value={_id} onClick={this.handleClick}>

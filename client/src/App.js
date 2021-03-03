@@ -96,10 +96,13 @@ export default class App extends Component {
     const itemToAdd = await axios.get(
       `${BASE_URL}/listings/${this.state.selectedListing}`
     )
-    const currentViewed = this.state.recentlyViewed
-    const newViewed = [...currentViewed, itemToAdd.data.listing]
-    this.setState({ recentlyViewed: newViewed })
-    console.log(newViewed)
+    itemToAdd.data.listing
+      ? // const newViewed = [...this.state.recentlyViewed, itemToAdd.data.listing]
+        this.setState({
+          recentlyViewed: [...this.state.recentlyViewed, itemToAdd.data.listing]
+        })
+      : console.log('skipped')
+    // console.log(itemToAdd)
   }
 
   render() {

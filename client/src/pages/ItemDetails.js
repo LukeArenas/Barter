@@ -54,7 +54,6 @@ export default class ItemDetails extends Component {
       `${BASE_URL}/sellers/id/${this.state.seller_id}`
     )
     this.setState({ vendor: response.data.seller[0] })
-    console.log(this.state.vendor)
   }
 
   render() {

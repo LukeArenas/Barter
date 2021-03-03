@@ -81,7 +81,6 @@ export default class Sell extends Component {
 
   setCategory = (event) => {
     this.setState({ category: event.target.value })
-    console.log(this.state)
   }
 
   render() {
