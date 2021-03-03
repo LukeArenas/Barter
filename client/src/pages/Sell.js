@@ -97,7 +97,7 @@ export default class Sell extends Component {
             placeholder="description"
             onChange={this.setDescription}
           />
-          <input type="text" placeholder="price" onChange={this.setPrice} />
+          $<input type="text" placeholder="price" onChange={this.setPrice} />
           <input type="text" placeholder="photo url" onChange={this.setPhoto} />
           <select onChange={this.setCategory}>
             <option value="miscellaneous">Miscellaneous</option>

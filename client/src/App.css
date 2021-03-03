@@ -22,3 +22,36 @@ footer {
   right: 0;
   background-color: #2ab7ca;
 }
+
+/* Buy Page */
+
+.buy-page {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10vw;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80vw;
+}
+
+.recently-viewed-container {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: indianred;
+  width: 80vw;
+}
+
+/* Thumbnails */
+
+.thumbnail {
+  background-color: plum;
+  min-width: 10vw;
+}
+
+.thumbnail-img {
+  max-width: 10vw;
+}

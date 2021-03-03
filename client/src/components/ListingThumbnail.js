@@ -9,11 +9,11 @@ export default class ListingThumbnail extends Component {
   render() {
     const { photo, price, title, _id, seller_id } = this.props.listing
     return (
-      <div>
+      <div className="thumbnail">
         <div value={_id} onClick={this.handleClick}>
-          <img src={photo} alt={title} />
+          <img src={photo} alt={title} className="thumbnail-img" />
           <h4>{title}</h4>
-          <p>{price}</p>
+          <p>${price}</p>
         </div>
         {seller_id === this.props.currentSellerId &&
         this.props.requestFrom === 'sell' ? (
