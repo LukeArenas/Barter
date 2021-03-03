@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ListingThumbnail from '../components/ListingThumbnail'
 import axios from 'axios'
 import { BASE_URL } from '../globals'
+import CurrencyInput from 'react-currency-input-field'
 
 export default class Sell extends Component {
   constructor(props) {
@@ -71,8 +72,8 @@ export default class Sell extends Component {
     this.setState({ description: event.target.value })
   }
 
-  setPrice = (event) => {
-    this.setState({ price: parseInt(event.target.value) })
+  setPrice = (value) => {
+    this.setState({ price: value })
   }
 
   setPhoto = (event) => {
@@ -86,7 +87,7 @@ export default class Sell extends Component {
   render() {
     return (
       <div className="sell-page">
-        <h3>Your listings:</h3>
+        <h3>List what you don't need:</h3>
         <form onSubmit={this.handleSubmit} className="new-listing-form">
           <input type="text" placeholder="title" onChange={this.setTitle} />
           <select onChange={this.setCondition}>
@@ -98,7 +99,12 @@ export default class Sell extends Component {
             placeholder="description"
             onChange={this.setDescription}
           />
-          $<input type="text" placeholder="price" onChange={this.setPrice} />
+          <CurrencyInput
+            placeholder="price"
+            onValueChange={this.setPrice}
+            decimalScale={2}
+          />
+          {/* $<input type="text" placeholder="price" onChange={this.setPrice} /> */}
           <input type="text" placeholder="photo url" onChange={this.setPhoto} />
           <select onChange={this.setCategory}>
             <option value="miscellaneous">Miscellaneous</option>
@@ -112,6 +118,7 @@ export default class Sell extends Component {
           </select>
           <input type="submit" value="List Item" />
         </form>
+        <h3>Your listings:</h3>
         <div className="product-container">
           {this.state.listings.map((listing) => {
             return (

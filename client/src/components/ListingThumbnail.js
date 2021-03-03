@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import trashIcon from '../images/trash-can.png'
 
 export default class ListingThumbnail extends Component {
   handleClick = () => {
@@ -13,7 +12,7 @@ export default class ListingThumbnail extends Component {
       <div className="thumbnail">
         <div value={_id} onClick={this.handleClick}>
           <img src={photo} alt={title} className="thumbnail-img" />
-          <h4>{title}</h4>
+          <h4 className="thumbnail-title">{title}</h4>
           <p className="price">${price}</p>
         </div>
         {seller_id === this.props.currentSellerId &&
@@ -23,7 +22,7 @@ export default class ListingThumbnail extends Component {
             onClick={this.props.deleteListing}
             className="delete-button"
           >
-            <img src={trashIcon} alt="trash-can" className="trash-icon" />
+            X
           </button>
         ) : null}
       </div>

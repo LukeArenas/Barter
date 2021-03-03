@@ -8,7 +8,6 @@ import Cart from './pages/Cart'
 import { Switch, Route, NavLink } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from './globals'
-import menuBar from './images/menu-bar.png'
 
 export default class App extends Component {
   constructor() {
