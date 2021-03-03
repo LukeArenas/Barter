@@ -18,11 +18,11 @@ export default class Welcome extends Component {
       return <Redirect to="/buy" />
     }
     return (
-      <div>
-        <div onSubmit={this.handleWelcomeSubmit}>
+      <div className="welcome-page">
+        <div className="welcome-content">
           <h3>Hi There!</h3>
           <p>Please enter your username:</p>
-          <form>
+          <form onSubmit={this.handleWelcomeSubmit}>
             <input
               type="text"
               placeholder="Enter username"

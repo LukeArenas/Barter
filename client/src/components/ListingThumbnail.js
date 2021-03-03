@@ -13,13 +13,29 @@ export default class ListingThumbnail extends Component {
         <div value={_id} onClick={this.handleClick}>
           <img src={photo} alt={title} className="thumbnail-img" />
           <h4>{title}</h4>
-          <p>${price}</p>
+          <p className="price">${price}</p>
         </div>
         {seller_id === this.props.currentSellerId &&
         this.props.requestFrom === 'sell' ? (
-          <button value={_id} onClick={this.props.deleteListing}>
-            Delete
-          </button>
+          // <button
+          //   value={_id}
+          //   onClick={this.props.deleteListing}
+          //   className="delete-button"
+          // >
+          //   <img
+          //     src="../images/trash-can.png"
+          //     alt="trash-can"
+          //     className="trash-icon"
+          //   />
+          // </button>
+          <input
+            type="image"
+            value={_id}
+            onClick={this.props.deleteListing}
+            className="delete-button"
+            src="images/trash-can.jpeg"
+            alt="trash-can"
+          />
         ) : null}
       </div>
     )

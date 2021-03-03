@@ -6,10 +6,12 @@ export default class CartItem extends Component {
   }
   render() {
     return (
-      <div>
-        <h3>{this.props.title}</h3>
-        <p>{this.props.price}</p>
-        <button onClick={this.handleClick}>Remove</button>
+      <div className="cart-item">
+        <h3 className="cart-title">{this.props.title}</h3>
+        <p className="cart-price">${this.props.price}</p>
+        <button onClick={this.handleClick} className="remove-from-cart">
+          Remove
+        </button>
       </div>
     )
   }

@@ -108,9 +108,15 @@ export default class App extends Component {
       <div className="app">
         <header>
           <h1>freetrade</h1>
-          <NavLink to="/buy">Buy</NavLink>
-          <NavLink to="/sell">Sell</NavLink>
-          <NavLink to="/cart">Cart</NavLink>
+          <NavLink to="/buy" className="nav">
+            Buy
+          </NavLink>
+          <NavLink to="/sell" className="nav">
+            Sell
+          </NavLink>
+          <NavLink to="/cart" className="nav">
+            Cart
+          </NavLink>
         </header>
         <Switch>
           <Route

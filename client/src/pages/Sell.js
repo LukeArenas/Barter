@@ -86,11 +86,11 @@ export default class Sell extends Component {
   render() {
     return (
       <div className="sell-page">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="new-listing-form">
           <input type="text" placeholder="title" onChange={this.setTitle} />
           <select onChange={this.setCondition}>
-            <option value="new">New</option>
-            <option value="used">Used</option>
+            <option value="New">New</option>
+            <option value="Used">Used</option>
           </select>
           <input
             type="text"

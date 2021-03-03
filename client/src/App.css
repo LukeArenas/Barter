@@ -1,15 +1,24 @@
+#root {
+  background-color: rgb(224, 219, 219);
+  padding: 0 10vw;
+  height: 100vh;
+}
+
 .app {
   text-align: center;
   height: 100vh;
-  background-color: rgb(224, 219, 219);
-}
-
-#root {
-  height: 100vh;
+  width: 80vw;
+  background-color: white;
+  padding-top: 10vh;
 }
 
 header {
   background-color: #2ab7ca;
+  width: 100vw;
+  position: absolute;
+  height: 10vh;
+  top: 0;
+  left: 0;
 }
 
 h1 {
@@ -17,11 +26,26 @@ h1 {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   background-color: #2ab7ca;
+}
+
+.nav {
+  text-decoration: none;
+}
+
+/* Welcome Page */
+
+.welcome-page {
+  display: flex;
+}
+
+.welcome-content {
+  width: 80vw;
+  justify-self: center;
 }
 
 /* Buy Page */
@@ -55,10 +79,21 @@ footer {
   padding: 0 10vw;
 }
 
-form {
+.new-listing-form {
   padding: 5vh 0;
   background-color: white;
   width: 80vw;
+}
+
+/* Cart  */
+
+.cart-item {
+  display: relative;
+}
+
+.cart-title {
+  display: absolute;
+  left: 0;
 }
 
 /* Thumbnails */
@@ -66,10 +101,26 @@ form {
 .thumbnail {
   background-color: plum;
   min-width: 10vw;
+  position: relative;
 }
 
 .thumbnail-img {
   max-width: 10vw;
+}
+
+.delete-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2vh;
+}
+
+.price {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
 }
 
 /* Item Details */
