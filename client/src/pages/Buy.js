@@ -12,6 +12,7 @@ export default class Buy extends Component {
   }
   componentDidMount() {
     this.getAllListings()
+    this.formatRecentlyViewed()
   }
 
   getAllListings = async () => {
@@ -21,6 +22,12 @@ export default class Buy extends Component {
     } catch (error) {
       console.log(error)
     }
+  }
+
+  formatRecentlyViewed = () => {
+    this.props.recentlyViewed.length > 8
+      ? this.props.recentlyViewed.shift()
+      : console.log('ok')
   }
 
   render() {

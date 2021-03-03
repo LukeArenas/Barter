@@ -97,12 +97,10 @@ export default class App extends Component {
       `${BASE_URL}/listings/${this.state.selectedListing}`
     )
     itemToAdd.data.listing
-      ? // const newViewed = [...this.state.recentlyViewed, itemToAdd.data.listing]
-        this.setState({
+      ? this.setState({
           recentlyViewed: [...this.state.recentlyViewed, itemToAdd.data.listing]
         })
       : console.log('skipped')
-    // console.log(itemToAdd)
   }
 
   render() {
