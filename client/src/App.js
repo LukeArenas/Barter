@@ -8,6 +8,7 @@ import Cart from './pages/Cart'
 import { Switch, Route, NavLink } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from './globals'
+import menuBar from './images/menu-bar.png'
 
 export default class App extends Component {
   constructor() {
@@ -108,9 +109,8 @@ export default class App extends Component {
       <div className="app">
         <header>
           <h1>freetrade</h1>
-          <div className="dropdown">
-            <button className="menu-button">Menu</button>
-            <div className="dropdown-content">
+          <div className="menu">
+            <div className="nav-container">
               <NavLink to="/buy" className="nav">
                 Buy
               </NavLink>

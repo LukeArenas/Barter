@@ -33,6 +33,7 @@ export default class Buy extends Component {
   render() {
     return (
       <div className="buy-page">
+        <h3>Find what you need:</h3>
         <div className="product-container">
           {this.state.listings.map((listing) => {
             return (

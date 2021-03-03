@@ -23,36 +23,29 @@ header {
 
 h1 {
   margin: 0;
+  color: white;
+  font-size: 45px;
 }
 
-.dropdown {
+.menu {
   position: relative;
-  display: inline-block;
   width: 100vw;
   height: 5vh;
   background-color: #2ab7ca;
 }
 
-.menu-button {
+.nav-container {
   position: absolute;
   right: 15vw;
-  bottom: 0;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  right: 15vw;
-  top: 5vh;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .nav {
   text-decoration: none;
-  display: block;
+  min-width: 5vw;
+  color: white;
+  font-size: 25px;
 }
 
 footer {
@@ -125,7 +118,6 @@ footer {
 /* Thumbnails */
 
 .thumbnail {
-  background-color: plum;
   min-width: 10vw;
   position: relative;
 }
@@ -139,7 +131,9 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 2vh;
+  min-height: 2vh;
+  border: none;
+  background-color: white;
 }
 
 .price {
@@ -147,6 +141,10 @@ footer {
   bottom: 0;
   right: 0;
   margin: 0;
+}
+
+.trash-icon {
+  max-width: 2vh;
 }
 
 /* Item Details */
