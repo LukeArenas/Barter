@@ -36,7 +36,6 @@ export default class App extends Component {
     try {
       const response = await axios.get(`${BASE_URL}/sellers`)
       this.setState({ allSellers: response.data.sellers })
-      console.log(response.data.sellers)
     } catch (error) {
       console.log(error)
     }
@@ -61,6 +60,7 @@ export default class App extends Component {
         `${BASE_URL}/sellers/${this.state.username}`
       )
       this.setState({ currentSeller: response.data.seller[0] })
+      console.log(this.state.currentSeller._id)
     } catch (error) {
       console.log(error)
     }
@@ -140,6 +140,7 @@ export default class App extends Component {
               <Sell
                 username={this.state.username}
                 {...reactProps}
+                currentSeller={this.state.currentSeller}
                 recentlyViewed={this.state.recentlyViewed}
                 viewListing={this.viewListing}
                 handleSelection={this.handleSelection}

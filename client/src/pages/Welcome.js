@@ -19,7 +19,6 @@ export default class Welcome extends Component {
     }
     return (
       <div>
-        {/* <Header /> */}
         <div onSubmit={this.handleWelcomeSubmit}>
           <h3>Hi There!</h3>
           <p>Please enter your username:</p>
@@ -32,7 +31,6 @@ export default class Welcome extends Component {
             <input type="submit" value="Submit" />
           </form>
         </div>
-        {/* <Footer /> */}
       </div>
     )
   }

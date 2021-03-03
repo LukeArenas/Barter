@@ -26,8 +26,9 @@ export default class Sell extends Component {
   getListingByUser = async () => {
     try {
       const response = await axios.get(
-        `${BASE_URL}/listings/user/603d57f33b8a020518b63c8a`
+        `${BASE_URL}/listings/user/${this.props.currentSeller._id}`
       )
+      console.log(response)
       this.setState({ listings: response.data.userListings })
     } catch (error) {
       console.log(error)
@@ -49,7 +50,7 @@ export default class Sell extends Component {
         price: this.state.price,
         photo: this.state.photo,
         category: this.state.category,
-        seller_id: '603d57f33b8a020518b63c8a'
+        seller_id: this.props.currentSeller._id
       })
       this.getListingByUser()
       console.log(response)
@@ -116,6 +117,7 @@ export default class Sell extends Component {
             return (
               <ListingThumbnail
                 listing={listing}
+                currentSellerId={this.props.currentSeller._id}
                 viewListing={this.props.viewListing}
                 handleSelection={this.props.handleSelection}
                 updateRecentlyViewed={this.updateRecentlyViewed}

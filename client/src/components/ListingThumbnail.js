@@ -8,6 +8,7 @@ export default class ListingThumbnail extends Component {
   }
   render() {
     const { photo, price, title, _id, seller_id } = this.props.listing
+    console.log(this.props)
     return (
       <div>
         <div value={_id} onClick={this.handleClick}>
@@ -15,7 +16,7 @@ export default class ListingThumbnail extends Component {
           <h4>{title}</h4>
           <p>{price}</p>
         </div>
-        {seller_id === '603d57f33b8a020518b63c8a' &&
+        {seller_id === this.props.currentSellerId &&
         this.props.requestFrom === 'sell' ? (
           <button value={_id} onClick={this.props.deleteListing}>
             Delete
