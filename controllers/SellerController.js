@@ -19,6 +19,16 @@ const getSellerInfo = async (req, res) => {
   }
 }
 
+const getSellerByName = async (req, res) => {
+  try {
+    const { username } = req.params
+    const seller = await Seller.find({ seller: username })
+    return res.status(200).json({ seller })
+  } catch (error) {
+    res.json(`Error with getSellerByName: ${error}`)
+  }
+}
+
 const createSeller = async (req, res) => {
   try {
     const newSeller = await new Seller(req.body)
@@ -39,4 +49,10 @@ const deleteSeller = async (req, res) => {
   }
 }
 
-module.exports = { getSellerInfo, createSeller, getAllSellers, deleteSeller }
+module.exports = {
+  getSellerInfo,
+  createSeller,
+  getAllSellers,
+  deleteSeller,
+  getSellerByName
+}

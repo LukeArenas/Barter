@@ -17,7 +17,8 @@ export default class App extends Component {
       recentlyViewed: [],
       selectedListing: '',
       addedToCart: [],
-      allSellers: []
+      allSellers: [],
+      currentSeller: {}
     }
   }
 
@@ -32,9 +33,13 @@ export default class App extends Component {
   }
 
   getSellers = async () => {
-    const response = await axios.get(`${BASE_URL}/sellers`)
-    this.setState({ allSellers: response.data.sellers })
-    console.log(response.data.sellers)
+    try {
+      const response = await axios.get(`${BASE_URL}/sellers`)
+      this.setState({ allSellers: response.data.sellers })
+      console.log(response.data.sellers)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   createSeller = async () => {
@@ -42,11 +47,23 @@ export default class App extends Component {
       return seller.seller === this.state.username
     })
     existingUser.length
-      ? console.log('user exists')
+      ? console.log('seller exists')
       : await axios.post(`${BASE_URL}/sellers`, {
           seller: this.state.username,
           customerRating: Math.ceil(Math.random() * 50) / 10
         })
+    this.getSellerByName()
+  }
+
+  getSellerByName = async () => {
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/sellers/${this.state.username}`
+      )
+      this.setState({ currentSeller: response.data.seller[0] })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   viewListing = (event) => {
