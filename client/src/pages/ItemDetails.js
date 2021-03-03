@@ -12,12 +12,12 @@ export default class ItemDetails extends Component {
       photo: '',
       price: 0,
       title: '',
+      seller_id: '',
       vendor: {}
     }
   }
   componentDidMount() {
-    this.displayListing()
-    this.getSellerInfo()
+    this.displayListing().then(this.getSellerInfo)
   }
 
   displayListing = async () => {
@@ -30,7 +30,8 @@ export default class ItemDetails extends Component {
       description,
       photo,
       price,
-      title
+      title,
+      seller_id
     } = response.data.listing
 
     this.setState({
@@ -39,7 +40,8 @@ export default class ItemDetails extends Component {
       description: description,
       photo: photo,
       price: price,
-      title: title
+      title: title,
+      seller_id: seller_id
     })
   }
 
@@ -49,7 +51,7 @@ export default class ItemDetails extends Component {
 
   getSellerInfo = async () => {
     const response = await axios.get(
-      `${BASE_URL}/sellers/603d57f33b8a020518b63c8a`
+      `${BASE_URL}/sellers/id/${this.state.seller_id}`
     )
     this.setState({ vendor: response.data.seller[0] })
     console.log(this.state.vendor)
