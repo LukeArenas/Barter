@@ -31,19 +31,15 @@ export default class Welcome extends Component {
               onChange={this.props.handleUsername}
               className="username-field"
             />
-            <input
-              type="submit"
-              value="Let's Trade"
-              className="welcome-submit"
-            />
+            <input type="submit" value="Login" className="welcome-submit" />
           </form>
           <div className="marketing">
             <img src={shoppingImage} alt="shop" className="shopping-image" />
             <div className="first">
-              <h3>Find what you need</h3>
+              <h3 className="welcome-text">Find what you need</h3>
             </div>
             <div className="second">
-              <h3>List what you don't</h3>
+              <h3 className="welcome-text">List what you don't</h3>
             </div>
             <img src={sellingImage} alt="sell" className="selling-image" />
           </div>

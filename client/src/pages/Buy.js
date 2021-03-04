@@ -45,7 +45,7 @@ export default class Buy extends Component {
     return (
       <div className="buy-page">
         <h3 className="buy-title">Find What You Need:</h3>
-        <h4 className="filter-spec">Filter by: Category</h4>
+        <h4 className="filter-spec">Category</h4>
         <form className="filter">
           <select onChange={this.changeCatFilter}>
             <option value="all">All</option>

@@ -1,4 +1,4 @@
-# Barter
+# attic
 
 ## Date: 3/5/21
 
@@ -76,3 +76,4 @@ Barter is a community-focused ecommerce app. It allows users to both list items 
 * [npm](https://www.npmjs.com/package/react-currency-input-field)
 * [Pexels](https://www.pexels.com/)
 * [CSS-Tricks](https://css-tricks.com/)
+* [Undraw](https://undraw.co/)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BASE_URL } from '../globals'
 import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
 export default class ItemDetails extends Component {
   constructor() {
@@ -13,7 +14,8 @@ export default class ItemDetails extends Component {
       price: 0,
       title: '',
       seller_id: '',
-      vendor: {}
+      vendor: {},
+      redirect: false
     }
   }
   componentDidMount() {
@@ -24,25 +26,17 @@ export default class ItemDetails extends Component {
     const response = await axios.get(
       `${BASE_URL}/listings/${this.props.selectedListing}`
     )
-    const {
-      category,
-      condition,
-      description,
-      photo,
-      price,
-      title,
-      seller_id
-    } = response.data.listing
-
-    this.setState({
-      category: category,
-      condition: condition,
-      description: description,
-      photo: photo,
-      price: price,
-      title: title,
-      seller_id: seller_id
-    })
+    response.data.listing
+      ? this.setState({
+          category: response.data.listing.category,
+          condition: response.data.listing.condition,
+          description: response.data.listing.description,
+          photo: response.data.listing.photo,
+          price: response.data.listing.price,
+          title: response.data.listing.title,
+          seller_id: response.data.listing.seller_id
+        })
+      : this.setState({ redirect: true })
   }
 
   handleClick = () => {
@@ -57,6 +51,9 @@ export default class ItemDetails extends Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />
+    }
     return (
       <div className="item-details-page">
         <img

@@ -106,8 +106,16 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+          rel="stylesheet"
+        ></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap"
+          rel="stylesheet"
+        ></link>
         <header>
-          <h1>loft</h1>
+          <h1>barter</h1>
           <div className="menu">
             <div className="nav-container">
               <NavLink to="/buy" className="nav">
@@ -171,10 +179,11 @@ export default class App extends Component {
           />
           <Route
             path="/cart"
-            render={() => (
+            render={(reactProps) => (
               <Cart
                 addedToCart={this.state.addedToCart}
                 removeFromCart={this.removeFromCart}
+                {...reactProps}
               />
             )}
           />
