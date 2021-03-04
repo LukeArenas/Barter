@@ -125,9 +125,11 @@ footer {
 
 .thumbnail {
   min-width: 10vw;
+  min-height: 20vh;
   position: relative;
   border-left: 1px solid rgb(224, 219, 219);
   border-right: 1px solid rgb(224, 219, 219);
+  margin-bottom: 2vh;
 }
 
 .thumbnail:hover {
