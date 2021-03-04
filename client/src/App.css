@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(224, 219, 219);
+}
+
 #root {
   background-color: rgb(224, 219, 219);
   padding: 0 10vw;
@@ -63,17 +67,69 @@ footer {
 
 .footer {
   margin: 0;
+  max-height: 10vh;
 }
 
 /* Welcome Page */
 
 .welcome-page {
   display: flex;
+  padding-bottom: 10vh;
 }
 
 .welcome-content {
   width: 80vw;
   justify-self: center;
+}
+
+.welcome-submit {
+  border: none;
+  background-color: rgb(69, 69, 248);
+  color: white;
+  border-radius: 5px;
+  padding: 0.5em;
+  width: 8em;
+  margin: 0 1em;
+}
+
+.welcome-submit:hover {
+  background-color: rgb(104, 104, 255);
+}
+
+.username-field {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid rgb(224, 219, 219);
+  outline: none;
+}
+
+.marketing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.shopping-image,
+.selling-image {
+  max-width: 30vw;
+}
+
+.first {
+  min-width: 30vw;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.second {
+  min-width: 25vw;
+  margin: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: right;
 }
 
 /* Buy Page */
@@ -310,6 +366,7 @@ select {
   border-radius: 5px;
   padding: 0.5em;
   margin: 1em;
+  outline: none;
 }
 
 .cart-button:hover {

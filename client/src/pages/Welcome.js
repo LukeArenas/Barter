@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import sellingImage from '../images/selling-image.png'
+import shoppingImage from '../images/online-shopping.png'
 
 export default class Welcome extends Component {
   constructor() {
@@ -27,9 +29,24 @@ export default class Welcome extends Component {
               type="text"
               placeholder="Enter username"
               onChange={this.props.handleUsername}
+              className="username-field"
             />
-            <input type="submit" value="Submit" />
+            <input
+              type="submit"
+              value="Let's Trade"
+              className="welcome-submit"
+            />
           </form>
+          <div className="marketing">
+            <img src={shoppingImage} alt="shop" className="shopping-image" />
+            <div className="first">
+              <h3>Find what you need</h3>
+            </div>
+            <div className="second">
+              <h3>List what you don't</h3>
+            </div>
+            <img src={sellingImage} alt="sell" className="selling-image" />
+          </div>
         </div>
       </div>
     )
