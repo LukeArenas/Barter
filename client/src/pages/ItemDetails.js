@@ -72,17 +72,19 @@ export default class ItemDetails extends Component {
           <p>Seller: {this.state.vendor.seller}</p>
           <p>Seller Rating: {this.state.vendor.customerRating}</p>
         </div>
-        <button className="add-to-cart" onClick={this.handleClick}>
-          Add To Cart
-        </button>
-        <button
-          className="add-to-cart"
-          onClick={() => {
-            this.props.history.push('/cart')
-          }}
-        >
-          Go To Cart
-        </button>
+        <div className="button-container">
+          <button className="cart-button" onClick={this.handleClick}>
+            Add To Cart
+          </button>
+          <button
+            className="cart-button"
+            onClick={() => {
+              this.props.history.push('/cart')
+            }}
+          >
+            Go To Cart
+          </button>
+        </div>
       </div>
     )
   }

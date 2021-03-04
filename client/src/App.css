@@ -287,6 +287,7 @@ select {
   margin-top: 1em;
   display: flex;
   flex-direction: column;
+  padding-bottom: 10vh;
 }
 
 .details-img {
@@ -295,11 +296,22 @@ select {
 }
 
 .detail-content {
-  min-width: 20vw;
+  max-width: 20vw;
   align-self: center;
+  text-align: left;
 }
 
-.add-to-cart {
+.cart-button {
   width: 6vw;
   align-self: center;
+  background-color: #ec697b;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 0.5em;
+  margin: 1em;
+}
+
+.cart-button:hover {
+  color: rgb(224, 219, 219);
 }

@@ -22,6 +22,7 @@ export default class Sell extends Component {
 
   componentDidMount() {
     this.getListingByUser()
+    this.formatRecentlyViewed()
   }
 
   getListingByUser = async () => {
@@ -39,6 +40,12 @@ export default class Sell extends Component {
   deleteListing = async (event) => {
     await axios.delete(`${BASE_URL}/listings/${event.target.value}`)
     this.getListingByUser()
+  }
+
+  formatRecentlyViewed = () => {
+    this.props.recentlyViewed.length > 5
+      ? this.props.recentlyViewed.shift()
+      : console.log('ok')
   }
 
   handleSubmit = async (e) => {
