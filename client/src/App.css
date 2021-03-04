@@ -50,22 +50,28 @@ h1 {
   text-decoration: none;
   min-width: 5vw;
   color: white;
-  font-size: 25px;
+  font-size: 23px;
 }
 
 .nav:hover {
   color: rgb(224, 219, 219);
 }
 
+.footer-div {
+  position: relative;
+  width: 100vw;
+}
+
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  left: 0;
+  left: -10vw;
   right: 0;
   background-color: #74c763;
 }
 
 .footer {
+  color: white;
   margin: 0;
   max-height: 10vh;
 }
@@ -168,7 +174,7 @@ footer {
 }
 
 #buy-list {
-  height: 50vh;
+  height: 60vh;
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
