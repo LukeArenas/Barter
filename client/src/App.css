@@ -130,6 +130,10 @@ footer {
   border-right: 1px solid rgb(224, 219, 219);
 }
 
+.thumbnail:hover {
+  box-shadow: 2px 2px 10px rgb(224, 219, 219);
+}
+
 .thumbnail-img {
   max-width: 10vw;
 }
@@ -164,10 +168,23 @@ footer {
 
 /* Item Details */
 
-.details-img {
-  max-height: 40vh;
-}
-
 .item-details-page {
   margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-img {
+  max-height: 40vh;
+  align-self: center;
+}
+
+.detail-content {
+  min-width: 20vw;
+  align-self: center;
+}
+
+.add-to-cart {
+  width: 6vw;
+  align-self: center;
 }

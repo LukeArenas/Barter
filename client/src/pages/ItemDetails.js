@@ -64,7 +64,7 @@ export default class ItemDetails extends Component {
           alt={this.state.title}
           className="details-img"
         />
-        <div>
+        <div className="detail-content">
           <h3>{this.state.title}</h3>
           <p>${this.state.price}</p>
           <p>Condition: {this.state.condition}</p>
@@ -72,8 +72,11 @@ export default class ItemDetails extends Component {
           <p>Seller: {this.state.vendor.seller}</p>
           <p>Seller Rating: {this.state.vendor.customerRating}</p>
         </div>
-        <button onClick={this.handleClick}>Add To Cart</button>
+        <button className="add-to-cart" onClick={this.handleClick}>
+          Add To Cart
+        </button>
         <button
+          className="add-to-cart"
           onClick={() => {
             this.props.history.push('/cart')
           }}

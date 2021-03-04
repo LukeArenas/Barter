@@ -25,7 +25,7 @@ export default class Buy extends Component {
   }
 
   formatRecentlyViewed = () => {
-    this.props.recentlyViewed.length > 8
+    this.props.recentlyViewed.length > 5
       ? this.props.recentlyViewed.shift()
       : console.log('ok')
   }

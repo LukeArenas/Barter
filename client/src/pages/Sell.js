@@ -103,6 +103,7 @@ export default class Sell extends Component {
             placeholder="price"
             onValueChange={this.setPrice}
             decimalScale={2}
+            fixedDecimalLength={2}
             prefix="$"
           />
           {/* $<input type="text" placeholder="price" onChange={this.setPrice} /> */}
@@ -111,11 +112,14 @@ export default class Sell extends Component {
             <option value="miscellaneous">Miscellaneous</option>
             <option value="toys">Toys</option>
             <option value="appliances">Appliances</option>
-            <option value="homegoods">Homegoods</option>
+            <option value="homegoods">Home and Kitchen</option>
             <option value="books">Books</option>
             <option value="electronics">Electronics</option>
             <option value="clothing">Clothing</option>
             <option value="outdoor">Outdoor</option>
+            <option value="outdoor">Furniture</option>
+            <option value="outdoor">Arts and Crafts</option>
+            <option value="outdoor">Vehicles</option>
           </select>
           <input type="submit" value="List Item" />
         </form>
