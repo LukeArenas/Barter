@@ -127,8 +127,34 @@ footer {
 
 .new-listing-form {
   padding: 5vh 0;
-  background-color: white;
   width: 80vw;
+}
+
+.new-listing-form input {
+  padding: 0.5em 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid rgb(224, 219, 219);
+  outline: none;
+  margin: 0 0.8em;
+}
+
+.listing-submit {
+  background-color: #ec697b;
+  color: white;
+  width: 6em;
+  border-radius: 5px;
+  border-bottom: none;
+}
+
+.listing-submit:hover {
+  color: rgb(224, 219, 219);
+}
+
+select {
+  border: none;
+  margin: 0 0.8em;
 }
 
 #sell-list {

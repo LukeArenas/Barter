@@ -120,7 +120,7 @@ export default class Sell extends Component {
             <option value="outdoor">Arts and Crafts</option>
             <option value="outdoor">Vehicles</option>
           </select>
-          <input type="submit" value="List Item" />
+          <input type="submit" value="List Item" className="listing-submit" />
         </form>
         <h3>Your listings:</h3>
         <div className="product-container" id="sell-list">
