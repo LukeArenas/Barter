@@ -6,8 +6,8 @@
 
 .app {
   text-align: center;
-  height: 80vh;
   width: 80vw;
+  min-height: 90vh;
   background-color: white;
   padding-top: 10vh;
 }
@@ -62,6 +62,10 @@ footer {
   background-color: #228d9b;
 }
 
+.footer {
+  margin: 0;
+}
+
 /* Welcome Page */
 
 .welcome-page {
@@ -94,6 +98,18 @@ footer {
   justify-content: space-evenly;
   background-color: white;
   width: 80vw;
+  padding-bottom: 10vh;
+}
+
+#buy-list {
+  height: 50vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#buy-list::-webkit-scrollbar {
+  display: none;
 }
 
 /* Sell Page */
@@ -113,12 +129,26 @@ footer {
 /* Cart  */
 
 .cart-item {
-  display: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
-.cart-title {
-  display: absolute;
-  left: 0;
+.title {
+  width: 35vw;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.cart-price {
+  display: inline;
+}
+
+.price-button-container {
+  width: 35vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 /* Thumbnails */
@@ -150,6 +180,7 @@ footer {
   background-color: red;
   color: white;
   opacity: 0;
+  border-radius: 4px;
 }
 
 .delete-button:hover {

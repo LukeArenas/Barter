@@ -34,7 +34,7 @@ export default class Buy extends Component {
     return (
       <div className="buy-page">
         <h3>Find what you need:</h3>
-        <div className="product-container">
+        <div className="product-container" id="buy-list">
           {this.state.listings.map((listing) => {
             return (
               <ListingThumbnail

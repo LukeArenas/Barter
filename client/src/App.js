@@ -180,9 +180,9 @@ export default class App extends Component {
           />
         </Switch>
         <footer>
-          <h3>Contact Us:</h3>
-          <p>Phone: 111-111-1111</p>
-          <p>Email: customerservice@freetrade.com</p>
+          <h3 className="footer">Contact Us:</h3>
+          <p className="footer">Phone: 111-111-1111</p>
+          <p className="footer">Email: customerservice@freetrade.com</p>
         </footer>
       </div>
     )
