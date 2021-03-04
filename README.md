@@ -73,3 +73,6 @@ Barter is a community-focused ecommerce app. It allows users to both list items 
 ### ***Credits***
 
 * [Bits and Pieces](https://blog.bitsrc.io/must-know-concepts-of-react-router-fb9c8cc3c12)
+* [npm](https://www.npmjs.com/package/react-currency-input-field)
+* [Pexels](https://www.pexels.com/)
+* [CSS-Tricks](https://css-tricks.com/)
