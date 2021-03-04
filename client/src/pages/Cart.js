@@ -17,7 +17,7 @@ export default class Cart extends Component {
             />
           ))}
         </div>
-        <button>Checkout</button>
+        <button className="checkout">Checkout</button>
       </div>
     )
   }

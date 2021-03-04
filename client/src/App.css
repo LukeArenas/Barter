@@ -12,7 +12,7 @@
 }
 
 header {
-  background-color: #228d9b;
+  background-color: #74c763;
   width: 100vw;
   position: absolute;
   height: 10vh;
@@ -30,7 +30,7 @@ h1 {
   position: relative;
   width: 100vw;
   height: 5vh;
-  background-color: #2ab7ca;
+  background-color: #8ed67f;
   display: flex;
   align-items: center;
 }
@@ -58,7 +58,7 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #228d9b;
+  background-color: #74c763;
 }
 
 .footer {
@@ -186,6 +186,29 @@ select {
   justify-content: flex-end;
   align-items: center;
   border-bottom: 1px solid rgb(224, 219, 219);
+}
+
+.remove-from-cart {
+  background-color: white;
+  color: rgb(180, 177, 177);
+  border: none;
+  outline: none;
+  padding: 0.5em;
+}
+
+.checkout {
+  background-color: #ec697b;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 0.5em;
+  margin: 1vh 0;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.checkout:hover {
+  color: rgb(224, 219, 219);
 }
 
 /* Thumbnails */
