@@ -16,7 +16,7 @@ body {
 }
 
 header {
-  background-color: #74c763;
+  background-color: #dd6031;
   width: 100vw;
   position: absolute;
   height: 10vh;
@@ -34,7 +34,7 @@ h1 {
   position: relative;
   width: 100vw;
   height: 5vh;
-  background-color: #8ed67f;
+  background-color: #eb754b;
   display: flex;
   align-items: center;
 }
@@ -67,7 +67,7 @@ footer {
   bottom: 0;
   left: -10vw;
   right: 0;
-  background-color: #74c763;
+  background-color: #dd6031;
   display: flex;
   justify-content: center;
 }
@@ -203,6 +203,10 @@ footer {
   display: none;
 }
 
+.filter-spec {
+  margin: 0;
+}
+
 /* Sell Page */
 
 .sell-page {
@@ -308,6 +312,7 @@ select {
 .thumbnail {
   min-width: 10vw;
   min-height: 20vh;
+  max-height: 40vh;
   position: relative;
   border-left: 1px solid rgb(224, 219, 219);
   border-right: 1px solid rgb(224, 219, 219);
@@ -376,9 +381,10 @@ select {
 /* Item Details */
 
 .item-details-page {
-  margin-top: 1em;
+  margin-top: 2em;
   display: flex;
   flex-direction: column;
+  min-height: 80vh;
   padding-bottom: 10vh;
 }
 

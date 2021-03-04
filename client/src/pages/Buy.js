@@ -8,7 +8,8 @@ export default class Buy extends Component {
     super()
     this.state = {
       listings: [],
-      filter: 'all'
+      catFilter: 'all',
+      priceFilter: 1000000
     }
   }
   componentDidMount() {
@@ -31,8 +32,12 @@ export default class Buy extends Component {
       : console.log('ok')
   }
 
-  onChange = (event) => {
-    this.setState({ filter: event.target.value })
+  changeCatFilter = (event) => {
+    this.setState({ catFilter: event.target.value })
+  }
+
+  changePriceFilter = (event) => {
+    this.setState({ priceFilter: event.target.value })
     console.log(event.target.value)
   }
 
@@ -40,8 +45,9 @@ export default class Buy extends Component {
     return (
       <div className="buy-page">
         <h3 className="buy-title">Find What You Need:</h3>
+        <h4 className="filter-spec">Filter by: Category</h4>
         <form className="filter">
-          <select onChange={this.onChange}>
+          <select onChange={this.changeCatFilter}>
             <option value="all">All</option>
             <option value="miscellaneous">Miscellaneous</option>
             <option value="toys">Toys</option>
@@ -56,9 +62,21 @@ export default class Buy extends Component {
             <option value="vehicles">Vehicles</option>
           </select>
         </form>
+        <h4 className="filter-spec">Price</h4>
+        <form className="filter">
+          <select onChange={this.changePriceFilter}>
+            <option value={1000000}>All</option>
+            <option value={20}>Under $20</option>
+            <option value={50}>Under $50</option>
+            <option value={100}>Under $100</option>
+            <option value={1000}>Under $1,000</option>
+            <option value={10000}>Under $10,000</option>
+          </select>
+        </form>
         <div className="product-container" id="buy-list">
           {this.state.listings.map((listing) => {
-            return listing.category === this.state.filter ? (
+            return listing.category === this.state.catFilter &&
+              listing.price < this.state.priceFilter ? (
               <ListingThumbnail
                 listing={listing}
                 viewListing={this.props.viewListing}
@@ -66,7 +84,8 @@ export default class Buy extends Component {
                 updateRecentlyViewed={this.updateRecentlyViewed}
                 {...this.props}
               />
-            ) : this.state.filter === 'all' ? (
+            ) : listing.price < this.state.priceFilter &&
+              this.state.catFilter === 'all' ? (
               <ListingThumbnail
                 listing={listing}
                 viewListing={this.props.viewListing}

@@ -107,7 +107,7 @@ export default class App extends Component {
     return (
       <div className="app">
         <header>
-          <h1>freetrade</h1>
+          <h1>loft</h1>
           <div className="menu">
             <div className="nav-container">
               <NavLink to="/buy" className="nav">
@@ -188,7 +188,7 @@ export default class App extends Component {
             </div>
             <div className="footer-content2">
               <p className="footer">Copyright 2021</p>
-              <p className="footer">Freetrade Inc.</p>
+              <p className="footer">Loft Inc.</p>
             </div>
           </footer>
         </div>
