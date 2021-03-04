@@ -173,6 +173,10 @@ footer {
   margin-bottom: 2vh;
 }
 
+.thumbnail-content {
+  height: 100%;
+}
+
 .thumbnail:hover {
   box-shadow: 2px 2px 10px rgb(224, 219, 219);
 }
@@ -181,21 +185,39 @@ footer {
   max-width: 10vw;
 }
 
-.delete-button {
+.dropbtn {
   position: absolute;
   top: 0;
   right: 0;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  height: 10px;
+  width: 10px;
+}
+
+.dropdown {
+  position: absolute;
+  display: inline-block;
+  top: 0;
   right: 0;
+}
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: -1vw;
   min-height: 2vh;
   border: none;
   background-color: red;
   color: white;
-  opacity: 0;
   border-radius: 4px;
+  display: none;
 }
 
-.delete-button:hover {
-  opacity: 1;
+.dropdown:hover .delete-button {
+  display: block;
 }
 
 .price {
