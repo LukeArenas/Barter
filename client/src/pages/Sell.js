@@ -123,7 +123,7 @@ export default class Sell extends Component {
           <input type="submit" value="List Item" />
         </form>
         <h3>Your listings:</h3>
-        <div className="product-container">
+        <div className="product-container" id="sell-list">
           {this.state.listings.map((listing) => {
             return (
               <ListingThumbnail

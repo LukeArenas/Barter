@@ -1,7 +1,6 @@
 #root {
   background-color: rgb(224, 219, 219);
   padding: 0 10vw;
-  height: 100vh;
 }
 
 .app {
@@ -108,6 +107,12 @@ footer {
   scrollbar-width: none;
 }
 
+.recently-viewed-title {
+  width: 80vw;
+  text-align: left;
+  border-bottom: 1px solid rgb(224, 219, 219);
+}
+
 #buy-list::-webkit-scrollbar {
   display: none;
 }
@@ -126,6 +131,10 @@ footer {
   width: 80vw;
 }
 
+#sell-list {
+  padding-bottom: 10vh;
+}
+
 /* Cart  */
 
 .cart-item {
@@ -134,10 +143,11 @@ footer {
 }
 
 .title {
-  width: 35vw;
+  width: 30vw;
   display: flex;
   justify-content: left;
   align-items: center;
+  border-bottom: 1px solid rgb(224, 219, 219);
 }
 
 .cart-price {
@@ -145,10 +155,11 @@ footer {
 }
 
 .price-button-container {
-  width: 35vw;
+  width: 30vw;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  border-bottom: 1px solid rgb(224, 219, 219);
 }
 
 /* Thumbnails */
@@ -172,8 +183,8 @@ footer {
 
 .delete-button {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 0;
+  right: 0;
   right: 0;
   min-height: 2vh;
   border: none;
