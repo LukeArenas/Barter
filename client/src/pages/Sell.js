@@ -30,8 +30,9 @@ export default class Sell extends Component {
       const response = await axios.get(
         `${BASE_URL}/listings/user/${this.props.currentSeller._id}`
       )
-      console.log(response)
-      this.setState({ listings: response.data.userListings })
+      response.data.userListings
+        ? this.setState({ listings: response.data.userListings })
+        : this.setState({ listings: [] })
     } catch (error) {
       console.log(error)
     }

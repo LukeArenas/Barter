@@ -84,7 +84,7 @@ footer {
 
 .welcome-submit {
   border: none;
-  background-color: rgb(69, 69, 248);
+  background-color: rgb(104, 104, 255);
   color: white;
   border-radius: 5px;
   padding: 0.5em;
@@ -93,7 +93,7 @@ footer {
 }
 
 .welcome-submit:hover {
-  background-color: rgb(104, 104, 255);
+  background-color: rgb(69, 69, 248);
 }
 
 .username-field {
@@ -208,7 +208,7 @@ footer {
 }
 
 .listing-submit {
-  background-color: #ec697b;
+  background-color: rgb(104, 104, 255);
   color: white;
   width: 6em;
   border-radius: 5px;
@@ -216,7 +216,7 @@ footer {
 }
 
 .listing-submit:hover {
-  color: rgb(224, 219, 219);
+  background-color: rgb(69, 69, 248);
 }
 
 select {
@@ -264,7 +264,7 @@ select {
 }
 
 .checkout {
-  background-color: #ec697b;
+  background-color: rgb(104, 104, 255);
   color: white;
   border: none;
   outline: none;
@@ -275,7 +275,7 @@ select {
 }
 
 .checkout:hover {
-  color: rgb(224, 219, 219);
+  background-color: rgb(69, 69, 248);
 }
 
 /* Thumbnails */
@@ -326,9 +326,9 @@ select {
   right: 0;
   min-height: 2vh;
   border: none;
-  background-color: red;
+  background-color: #ec697b;
   color: white;
-  border-radius: 4px;
+  border-bottom-left-radius: 4px;
   display: none;
 }
 
@@ -371,7 +371,7 @@ select {
 .cart-button {
   width: 6vw;
   align-self: center;
-  background-color: #ec697b;
+  background-color: rgb(104, 104, 255);
   border: none;
   color: white;
   border-radius: 5px;
@@ -381,5 +381,5 @@ select {
 }
 
 .cart-button:hover {
-  color: rgb(224, 219, 219);
+  background-color: rgb(69, 69, 248);
 }
