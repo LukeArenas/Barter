@@ -68,12 +68,25 @@ footer {
   left: -10vw;
   right: 0;
   background-color: #74c763;
+  display: flex;
+  justify-content: center;
 }
 
 .footer {
   color: white;
   margin: 0;
   max-height: 10vh;
+  text-align: left;
+}
+
+.footer-content {
+  width: 30vw;
+  margin-right: 5vw;
+  margin-left: 10vw;
+}
+
+.footer-content2 {
+  width: 30vw;
 }
 
 /* Welcome Page */
@@ -174,7 +187,7 @@ footer {
 }
 
 #buy-list {
-  height: 60vh;
+  height: 70vh;
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -196,6 +209,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   padding: 0 10vw;
+  min-height: 80vh;
 }
 
 .new-listing-form {
@@ -235,6 +249,11 @@ select {
 }
 
 /* Cart  */
+
+.cart {
+  min-height: 80vh;
+  padding-bottom: 10vh;
+}
 
 .cart-item {
   display: flex;

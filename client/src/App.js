@@ -181,9 +181,15 @@ export default class App extends Component {
         </Switch>
         <div className="footer-div">
           <footer>
-            <h3 className="footer">Contact Us:</h3>
-            <p className="footer">Phone: 111-111-1111</p>
-            <p className="footer">Email: customerservice@freetrade.com</p>
+            <div className="footer-content">
+              <h3 className="footer">Contact Us:</h3>
+              <p className="footer">Phone: 111-111-1111</p>
+              <p className="footer">Email: customerservice@freetrade.com</p>
+            </div>
+            <div className="footer-content2">
+              <p className="footer">Copyright 2021</p>
+              <p className="footer">Freetrade Inc.</p>
+            </div>
           </footer>
         </div>
       </div>
