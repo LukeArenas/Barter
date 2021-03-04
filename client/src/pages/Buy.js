@@ -7,7 +7,8 @@ export default class Buy extends Component {
   constructor() {
     super()
     this.state = {
-      listings: []
+      listings: [],
+      filter: 'all'
     }
   }
   componentDidMount() {
@@ -30,13 +31,34 @@ export default class Buy extends Component {
       : console.log('ok')
   }
 
+  onChange = (event) => {
+    this.setState({ filter: event.target.value })
+    console.log(event.target.value)
+  }
+
   render() {
     return (
       <div className="buy-page">
-        <h3>Find what you need:</h3>
+        <h3 className="buy-title">Find What You Need:</h3>
+        <form className="filter">
+          <select onChange={this.onChange}>
+            <option value="all">All</option>
+            <option value="miscellaneous">Miscellaneous</option>
+            <option value="toys">Toys</option>
+            <option value="appliances">Appliances</option>
+            <option value="homegoods">Home and Kitchen</option>
+            <option value="books">Books</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="outdoor">Outdoor</option>
+            <option value="furniture">Furniture</option>
+            <option value="artsandcrafts">Arts and Crafts</option>
+            <option value="vehicles">Vehicles</option>
+          </select>
+        </form>
         <div className="product-container" id="buy-list">
           {this.state.listings.map((listing) => {
-            return (
+            return listing.category === this.state.filter ? (
               <ListingThumbnail
                 listing={listing}
                 viewListing={this.props.viewListing}
@@ -44,7 +66,15 @@ export default class Buy extends Component {
                 updateRecentlyViewed={this.updateRecentlyViewed}
                 {...this.props}
               />
-            )
+            ) : this.state.filter === 'all' ? (
+              <ListingThumbnail
+                listing={listing}
+                viewListing={this.props.viewListing}
+                handleSelection={this.props.handleSelection}
+                updateRecentlyViewed={this.updateRecentlyViewed}
+                {...this.props}
+              />
+            ) : null
           })}
         </div>
         <h3 className="recently-viewed-title">Your Recently Viewed Items:</h3>

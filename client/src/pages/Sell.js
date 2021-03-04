@@ -123,9 +123,9 @@ export default class Sell extends Component {
             <option value="electronics">Electronics</option>
             <option value="clothing">Clothing</option>
             <option value="outdoor">Outdoor</option>
-            <option value="outdoor">Furniture</option>
-            <option value="outdoor">Arts and Crafts</option>
-            <option value="outdoor">Vehicles</option>
+            <option value="furniture">Furniture</option>
+            <option value="artsandcrafts">Arts and Crafts</option>
+            <option value="vehicles">Vehicles</option>
           </select>
           <input type="submit" value="List Item" className="listing-submit" />
         </form>
