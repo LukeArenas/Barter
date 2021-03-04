@@ -3,6 +3,7 @@ import ListingThumbnail from '../components/ListingThumbnail'
 import axios from 'axios'
 import { BASE_URL } from '../globals'
 import CurrencyInput from 'react-currency-input-field'
+import { Redirect } from 'react-router-dom'
 
 export default class Sell extends Component {
   constructor(props) {
@@ -16,7 +17,8 @@ export default class Sell extends Component {
       description: '',
       price: 0,
       photo: '',
-      category: 'miscellaneous'
+      category: 'miscellaneous',
+      redirect: false
     }
   }
 
@@ -32,7 +34,7 @@ export default class Sell extends Component {
       )
       response.data.userListings
         ? this.setState({ listings: response.data.userListings })
-        : this.setState({ listings: [] })
+        : this.setState({ redirect: true })
     } catch (error) {
       console.log(error)
     }
@@ -93,6 +95,9 @@ export default class Sell extends Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />
+    }
     return (
       <div className="sell-page">
         <h3>List what you don't need:</h3>
