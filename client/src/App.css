@@ -233,7 +233,7 @@ select {
 .delete-button {
   position: absolute;
   top: 0;
-  right: -1vw;
+  right: 0;
   min-height: 2vh;
   border: none;
   background-color: red;
