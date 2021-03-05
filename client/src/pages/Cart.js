@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CartItem from '../components/CartItem'
+import NumberFormat from 'react-number-format'
 
 export default class Cart extends Component {
   directToBuyPage = () => {
@@ -28,10 +29,16 @@ export default class Cart extends Component {
             <div className="total-container">
               <div className="total">Total</div>
               <div className="total-amount">
-                $
-                {this.props.addedToCart.reduce((acc, value) => {
-                  return acc + value.price
-                }, 0)}
+                <NumberFormat
+                  value={this.props.addedToCart.reduce((acc, value) => {
+                    return acc + value.price
+                  }, 0)}
+                  displayType={'text'}
+                  thousandSeparator={true}
+                  prefix={'$'}
+                  decimalScale={2}
+                  fixedDecimalScale={true}
+                />
               </div>
             </div>
           ) : null}

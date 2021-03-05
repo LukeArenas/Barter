@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import NumberFormat from 'react-number-format'
 
 export default class ListingThumbnail extends Component {
   handleClick = () => {
@@ -17,7 +18,16 @@ export default class ListingThumbnail extends Component {
         >
           <img src={photo} alt={title} className="thumbnail-img" />
           <h4 className="thumbnail-title">{title}</h4>
-          <p className="price">${price}</p>
+          <p className="price">
+            <NumberFormat
+              value={price}
+              displayType={'text'}
+              thousandSeparator={true}
+              prefix={'$'}
+              decimalScale={2}
+              fixedDecimalScale={true}
+            />
+          </p>
         </div>
         {seller_id === this.props.currentSellerId &&
         this.props.requestFrom === 'sell' ? (

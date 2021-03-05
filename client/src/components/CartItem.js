@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import NumberFormat from 'react-number-format'
 
 export default class CartItem extends Component {
   handleClick = () => {
@@ -11,7 +12,16 @@ export default class CartItem extends Component {
           <h3 className="cart-title">{this.props.title}</h3>
         </div>
         <div className="price-button-container">
-          <p className="cart-price">${this.props.price}</p>
+          <p className="cart-price">
+            <NumberFormat
+              value={this.props.price}
+              displayType={'text'}
+              thousandSeparator={true}
+              prefix={'$'}
+              decimalScale={2}
+              fixedDecimalScale={true}
+            />
+          </p>
           <button onClick={this.handleClick} className="remove-from-cart">
             Remove
           </button>
