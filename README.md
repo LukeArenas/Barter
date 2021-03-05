@@ -44,19 +44,14 @@ Barter is a community-focused ecommerce app. It allows users to both list items 
 
 ***
 
-### ***MongoDB Decisions***
+### ***Back-end Decisions***
 
-### ***Express Decisions***
+For the scope of this project, I decided it would be best to design a MongoDB database with two schemas/documents - one for the sellers and one for the listings. These two documents would have a one to many relationship with each seller being able to list multiple items. Given this, each listing would be assigned a seller_id upon creation. I also for simplicity sake decided to keep the controllers and routes for each model separate. Each controller contains a get, post, and delete function. In practice, the delete function for the seller is never called by the end user but I added it in so I could go in the back end and delete test cases. There are also additional get functions that allow the front-end to receive information depending on which parameter is passed in (e.g. getting all listings using seller_id). Lastly, the routes were defined in a separate file from the server so that just two lines of code in the server could reference all of the routes for the sellers and listings.
 
-### ***React Decisions***
+### ***Front-end Decisions***
 
-### ***Node Decisions***
+In the planning stages of this project, I concluded that five main webpages would suffice for what I wanted this website to do. Those pages were Welcome, Buy, Sell, Cart, and Item Details. Some of these pages would also have components that could be reused on the same or different pages. For example, the thumbnail component is used twice on the Buy page and once on the Sell page. The sell page would allow a user to upload their own listing(s), as well as view the listings they've created in the past. The buy page would display not only the user's listings, but all listings created in the database. I also knew to simulate an ecommerce site, I wanted to include a recently viewed component on the Buy page. This would allow users to quickly return to an item they found interesting.
 
-
-### ***User Stories***
-
-* As a homeowner with lot of clutter, I want a way to sell things that I don't need anymore to people in the community.
-* As a college student looking to make some quick money, I want a website to easily list my items I want to sell.
 
 ### ***Screenshots***
 
