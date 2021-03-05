@@ -1,4 +1,4 @@
-# attic
+# barter
 
 ## Date: 3/5/21
 
@@ -16,7 +16,7 @@ Barter is a community-focused ecommerce app. It allows users to both list items 
 
 ### ***Project Planning***
 
- #### [Workflow](https://trello.com/b/3sCCi1g8/freetrade-working-title) | [Dataflow](https://lucid.app/lucidchart/5d649ab4-9a4d-464f-a853-ad56af8501d7/edit?beaconFlowId=24E8AFF870EC9DEF&page=0_0#) | [Entity-Relationship Diagram](https://app.diagrams.net/#G1XTHZyrNTRPlAOTUXTbyjESE6pbxWWU9L)
+ #### [Workflow](https://trello.com/b/3sCCi1g8/barter) | [Dataflow](https://lucid.app/lucidchart/5d649ab4-9a4d-464f-a853-ad56af8501d7/edit?beaconFlowId=24E8AFF870EC9DEF&page=0_0#) | [Entity-Relationship Diagram](https://app.diagrams.net/#G1XTHZyrNTRPlAOTUXTbyjESE6pbxWWU9L)
 
  ### ***Website Wireframes***
 
@@ -55,7 +55,8 @@ Barter is a community-focused ecommerce app. It allows users to both list items 
 
 ### ***User Stories***
 
-
+* As a homeowner with lot of clutter, I want a way to sell things that I don't need anymore to people in the community.
+* As a college student looking to make some quick money, I want a website to easily list my items I want to sell.
 
 ### ***Screenshots***
 

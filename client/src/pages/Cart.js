@@ -5,6 +5,7 @@ export default class Cart extends Component {
   directToBuyPage = () => {
     this.props.history.push('/buy')
   }
+
   render() {
     console.log(this.props.addedToCart)
     return (
