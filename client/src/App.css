@@ -240,6 +240,9 @@ footer {
   border-bottom: 2px solid rgb(224, 219, 219);
   outline: none;
   margin: 0 0.8em;
+  font-family: 'Heebo', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .listing-submit {
@@ -257,6 +260,15 @@ footer {
 select {
   border: none;
   margin: 0 0.8em;
+  font-family: 'Heebo', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+option {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 #sell-list {

@@ -18,6 +18,8 @@ Barter is a community-focused ecommerce app. It allows users to both list items 
 
  #### [Workflow](https://trello.com/b/3sCCi1g8/barter) | [Dataflow](https://lucid.app/lucidchart/5d649ab4-9a4d-464f-a853-ad56af8501d7/edit?beaconFlowId=24E8AFF870EC9DEF&page=0_0#) | [Entity-Relationship Diagram](https://app.diagrams.net/#G1XTHZyrNTRPlAOTUXTbyjESE6pbxWWU9L)
 
+***
+
 ### ***Technologies***
 
 * MongoDB
@@ -48,7 +50,9 @@ In the planning stages of this project, I concluded that five main webpages woul
 ### ***Future Updates***
 
 - [ ] Functioning checkout button
-- [ ] 
+- [ ] Confirm alert when delete button clicked
+- [ ] Integrate inventory values
+- [ ] User authentication
 
 ***
 
@@ -60,3 +64,6 @@ In the planning stages of this project, I concluded that five main webpages woul
 * [CSS-Tricks](https://css-tricks.com/)
 * [Undraw](https://undraw.co/)
 * [Github:s-yadav](https://github.com/s-yadav/react-number-format)
+* [ObjectRocket](https://kb.objectrocket.com/mongo-db/how-to-use-the-mongoose-update-query-in-nodejs-1303)
+* [W3schools](https://www.w3schools.com/)
+* [StackOverflow](https://stackoverflow.com/)
