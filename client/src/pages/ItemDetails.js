@@ -15,7 +15,9 @@ export default class ItemDetails extends Component {
       title: '',
       seller_id: '',
       vendor: {},
-      redirect: false
+      redirect: false,
+      beginUpdate: false,
+      matchCurrentUser: ''
     }
   }
   componentDidMount() {
@@ -50,6 +52,26 @@ export default class ItemDetails extends Component {
     this.setState({ vendor: response.data.seller[0] })
   }
 
+  updatePrice = (event) => {
+    this.setState({ price: event.target.value })
+  }
+
+  updateDescription = (event) => {
+    this.setState({ description: event.target.value })
+  }
+
+  updateListing = async () => {
+    await axios.put(
+      `${BASE_URL}/listings/update/${this.props.selectedListing}`,
+      { price: this.state.price, description: this.state.description }
+    )
+    this.setState({ beginUpdate: false })
+  }
+
+  beginUpdate = () => {
+    this.setState({ beginUpdate: true })
+  }
+
   render() {
     if (this.state.redirect) {
       return <Redirect to="/" />
@@ -61,14 +83,35 @@ export default class ItemDetails extends Component {
           alt={this.state.title}
           className="details-img"
         />
-        <div className="detail-content">
-          <h3>{this.state.title}</h3>
-          <p>${this.state.price}</p>
-          <p>Condition: {this.state.condition}</p>
-          <p>Details: {this.state.description}</p>
-          <p>Seller: {this.state.vendor.seller}</p>
-          <p>Seller Rating: {this.state.vendor.customerRating}</p>
-        </div>
+        {this.state.beginUpdate ? (
+          <div className="detail-content">
+            <h3>{this.state.title}</h3>
+            $
+            <input
+              type="text"
+              value={this.state.price}
+              onChange={this.updatePrice}
+            />
+            <p>Condition: {this.state.condition}</p>
+            Details:{' '}
+            <input
+              type="text"
+              value={this.state.description}
+              onChange={this.updateDescription}
+            />
+            <p>Seller: {this.state.vendor.seller}</p>
+            <p>Seller Rating: {this.state.vendor.customerRating}</p>
+          </div>
+        ) : (
+          <div className="detail-content">
+            <h3>{this.state.title}</h3>
+            <p>${this.state.price}</p>
+            <p>Condition: {this.state.condition}</p>
+            <p>Details: {this.state.description}</p>
+            <p>Seller: {this.state.vendor.seller}</p>
+            <p>Seller Rating: {this.state.vendor.customerRating}</p>
+          </div>
+        )}
         <div className="button-container">
           <button className="cart-button" onClick={this.handleClick}>
             Add To Cart
@@ -81,6 +124,13 @@ export default class ItemDetails extends Component {
           >
             Go To Cart
           </button>
+          {this.state.vendor.seller === this.props.username &&
+          !this.state.beginUpdate ? (
+            <button onClick={this.beginUpdate}>Update</button>
+          ) : null}
+          {this.state.beginUpdate ? (
+            <button onClick={this.updateListing}>Confirm</button>
+          ) : null}
         </div>
       </div>
     )

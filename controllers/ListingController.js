@@ -49,10 +49,24 @@ const deleteListing = async (req, res) => {
   }
 }
 
+const updatePrice = async (req, res) => {
+  try {
+    const { id } = req.params
+    const object = await Listing.findOneAndUpdate(
+      { _id: id },
+      { price: req.body.price, description: req.body.description }
+    )
+    res.status(200).json({ object })
+  } catch (error) {
+    res.json(`Error with updatePrice: ${error}`)
+  }
+}
+
 module.exports = {
   createListing,
   getListingByUser,
   getAllListings,
   deleteListing,
-  getListingById
+  getListingById,
+  updatePrice
 }

@@ -177,6 +177,7 @@ export default class App extends Component {
               <ItemDetails
                 selectedListing={this.state.selectedListing}
                 addToCart={this.addToCart}
+                username={this.state.username}
                 {...reactProps}
               />
             )}

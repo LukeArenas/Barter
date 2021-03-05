@@ -47,7 +47,7 @@ In the planning stages of this project, I concluded that five main webpages woul
 
 ### ***Future Updates***
 
-- [ ] 
+- [ ] Functioning checkout button
 - [ ] 
 
 ***

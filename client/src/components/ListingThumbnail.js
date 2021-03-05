@@ -7,6 +7,7 @@ export default class ListingThumbnail extends Component {
     this.props.handleSelection(this.props.listing._id)
     this.props.updateRecentlyViewed()
   }
+
   render() {
     const { photo, price, title, _id, seller_id } = this.props.listing
     return (
@@ -29,6 +30,7 @@ export default class ListingThumbnail extends Component {
             />
           </p>
         </div>
+
         {seller_id === this.props.currentSellerId &&
         this.props.requestFrom === 'sell' ? (
           <div className="dropdown">
