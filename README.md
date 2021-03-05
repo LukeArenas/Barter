@@ -73,3 +73,4 @@ In the planning stages of this project, I concluded that five main webpages woul
 * [Pexels](https://www.pexels.com/)
 * [CSS-Tricks](https://css-tricks.com/)
 * [Undraw](https://undraw.co/)
+* [Github:s-yadav](https://github.com/s-yadav/react-number-format)

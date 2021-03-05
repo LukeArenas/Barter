@@ -115,7 +115,7 @@ export default class Sell extends Component {
           <CurrencyInput
             placeholder="price"
             onValueChange={this.setPrice}
-            decimalScale={0}
+            decimalScale={2}
             prefix="$"
           />
           {/* $<input type="text" placeholder="price" onChange={this.setPrice} /> */}
