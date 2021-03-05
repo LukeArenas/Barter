@@ -18,23 +18,6 @@ Barter is a community-focused ecommerce app. It allows users to both list items 
 
  #### [Workflow](https://trello.com/b/3sCCi1g8/barter) | [Dataflow](https://lucid.app/lucidchart/5d649ab4-9a4d-464f-a853-ad56af8501d7/edit?beaconFlowId=24E8AFF870EC9DEF&page=0_0#) | [Entity-Relationship Diagram](https://app.diagrams.net/#G1XTHZyrNTRPlAOTUXTbyjESE6pbxWWU9L)
 
- ### ***Website Wireframes***
-
-#### Welcome Page
- ![Welcome Page](wireframes/Welcome-Page.PNG)
-
-#### Buy Page
-![Buy Page](wireframes/Buy-Page.PNG)
-
-#### Sell Page
-![Sell Page](wireframes/Sell-Page.PNG)
-
-#### Item Details Page
-![Item Details Page](wireframes/Item-Details-Page.PNG)
-
-#### Cart Page
-![Cart Page](wireframes/Cart-Page.PNG)
-
 ### ***Technologies***
 
 * MongoDB
@@ -52,10 +35,13 @@ For the scope of this project, I decided it would be best to design a MongoDB da
 
 In the planning stages of this project, I concluded that five main webpages would suffice for what I wanted this website to do. Those pages were Welcome, Buy, Sell, Cart, and Item Details. Some of these pages would also have components that could be reused on the same or different pages. For example, the thumbnail component is used twice on the Buy page and once on the Sell page. The sell page would allow a user to upload their own listing(s), as well as view the listings they've created in the past. The buy page would display not only the user's listings, but all listings created in the database. I also knew to simulate an ecommerce site, I wanted to include a recently viewed component on the Buy page. This would allow users to quickly return to an item they found interesting.
 
+### ***Buy Page WireFrame***
 
-### ***Screenshots***
+![Buy Page Wireframe](screenshots/Buy-Page.PNG)
 
+### ***Buy Page Implementation***
 
+![Buy Page Screenshot](screenshots/buy-page-screenshot.JPG)
 
 ***
 
