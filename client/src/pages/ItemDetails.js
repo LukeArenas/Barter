@@ -112,24 +112,32 @@ export default class ItemDetails extends Component {
             <p>Seller Rating: {this.state.vendor.customerRating}</p>
           </div>
         )}
+
         <div className="button-container">
-          <button className="cart-button" onClick={this.handleClick}>
-            Add To Cart
-          </button>
-          <button
-            className="cart-button"
-            onClick={() => {
-              this.props.history.push('/cart')
-            }}
-          >
-            Go To Cart
-          </button>
           {this.state.vendor.seller === this.props.username &&
           !this.state.beginUpdate ? (
-            <button onClick={this.beginUpdate}>Update</button>
+            <button onClick={this.beginUpdate} className="cart-button">
+              Update
+            </button>
+          ) : this.state.vendor.seller != this.props.username ? (
+            <div>
+              <button className="cart-button" onClick={this.handleClick}>
+                Add To Cart
+              </button>
+              <button
+                className="cart-button"
+                onClick={() => {
+                  this.props.history.push('/cart')
+                }}
+              >
+                Go To Cart
+              </button>
+            </div>
           ) : null}
           {this.state.beginUpdate ? (
-            <button onClick={this.updateListing}>Confirm</button>
+            <button onClick={this.updateListing} className="cart-button">
+              Confirm
+            </button>
           ) : null}
         </div>
       </div>
