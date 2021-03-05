@@ -8,7 +8,6 @@ export default class Cart extends Component {
   }
 
   render() {
-    console.log(this.props.addedToCart)
     return (
       <div className="cart">
         <h3 className="greeting">Your Cart:</h3>

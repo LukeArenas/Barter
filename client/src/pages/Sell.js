@@ -36,7 +36,7 @@ export default class Sell extends Component {
         ? this.setState({ listings: response.data.userListings })
         : this.setState({ redirect: true })
     } catch (error) {
-      console.log(error)
+      alert(error)
     }
   }
 
@@ -64,9 +64,8 @@ export default class Sell extends Component {
         seller_id: this.props.currentSeller._id
       })
       this.getListingByUser()
-      console.log(response)
     } catch (error) {
-      console.log(error)
+      alert(error)
     }
   }
 
