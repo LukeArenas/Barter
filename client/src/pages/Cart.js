@@ -23,6 +23,17 @@ export default class Cart extends Component {
           ) : (
             <div>Your cart is empty</div>
           )}
+          {this.props.addedToCart.length ? (
+            <div className="total-container">
+              <div className="total">Total</div>
+              <div className="total-amount">
+                $
+                {this.props.addedToCart.reduce((acc, value) => {
+                  return acc + value.price
+                }, 0)}
+              </div>
+            </div>
+          ) : null}
         </div>
         {this.props.addedToCart.length ? (
           <button className="checkout">Checkout</button>

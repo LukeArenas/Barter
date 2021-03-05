@@ -314,6 +314,25 @@ select {
   background-color: rgb(89, 219, 241);
 }
 
+.total-container {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.total {
+  width: 30vw;
+  display: flex;
+  justify-content: left;
+}
+
+.total-amount {
+  width: 30vw;
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Montserrat', sans-serif;
+}
+
 /* Thumbnails */
 
 .thumbnail {
