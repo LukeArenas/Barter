@@ -96,7 +96,11 @@ export default class App extends Component {
     const itemToAdd = await axios.get(
       `${BASE_URL}/listings/${this.state.selectedListing}`
     )
-    itemToAdd.data.listing
+    const duplicate = this.state.recentlyViewed.filter((viewedItem) => {
+      return viewedItem._id === itemToAdd.data.listing._id
+    })
+    console.log(duplicate)
+    itemToAdd.data.listing && !duplicate.length
       ? this.setState({
           recentlyViewed: [...this.state.recentlyViewed, itemToAdd.data.listing]
         })
@@ -197,7 +201,7 @@ export default class App extends Component {
             </div>
             <div className="footer-content2">
               <p className="footer">Copyright 2021</p>
-              <p className="footer">Loft Inc.</p>
+              <p className="footer">Barter Inc.</p>
             </div>
           </footer>
         </div>
