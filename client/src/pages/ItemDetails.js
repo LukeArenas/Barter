@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BASE_URL } from '../globals'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import CurrencyInput from 'react-currency-input-field'
 
 export default class ItemDetails extends Component {
   constructor() {
@@ -52,8 +53,8 @@ export default class ItemDetails extends Component {
     this.setState({ vendor: response.data.seller[0] })
   }
 
-  updatePrice = (event) => {
-    this.setState({ price: event.target.value })
+  updatePrice = (value) => {
+    this.setState({ price: value })
   }
 
   updateDescription = (event) => {
@@ -86,11 +87,12 @@ export default class ItemDetails extends Component {
         {this.state.beginUpdate ? (
           <div className="detail-content">
             <h3>{this.state.title}</h3>
-            $
-            <input
-              type="text"
-              value={this.state.price}
-              onChange={this.updatePrice}
+            <CurrencyInput
+              placeholder="price"
+              onValueChange={this.updatePrice}
+              decimalScale={2}
+              prefix="$"
+              className="update-input"
             />
             <p>Condition: {this.state.condition}</p>
             Details:{' '}
@@ -98,6 +100,7 @@ export default class ItemDetails extends Component {
               type="text"
               value={this.state.description}
               onChange={this.updateDescription}
+              className="update-input"
             />
             <p>Seller: {this.state.vendor.seller}</p>
             <p>Seller Rating: {this.state.vendor.customerRating}</p>

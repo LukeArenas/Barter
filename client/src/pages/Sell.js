@@ -100,7 +100,7 @@ export default class Sell extends Component {
     }
     return (
       <div className="sell-page">
-        <h3>List what you don't need:</h3>
+        <h3 className="greeting">List what you don't need:</h3>
         <form onSubmit={this.handleSubmit} className="new-listing-form">
           <input type="text" placeholder="title" onChange={this.setTitle} />
           <select onChange={this.setCondition}>

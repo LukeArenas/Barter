@@ -11,7 +11,7 @@ export default class Cart extends Component {
     console.log(this.props.addedToCart)
     return (
       <div className="cart">
-        <h3>Your Cart:</h3>
+        <h3 className="greeting">Your Cart:</h3>
         <div className="product-container">
           {this.props.addedToCart.length ? (
             this.props.addedToCart.map((item) => (

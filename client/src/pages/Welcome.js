@@ -22,7 +22,7 @@ export default class Welcome extends Component {
     return (
       <div className="welcome-page">
         <div className="welcome-content">
-          <h3>Hi There!</h3>
+          <h3 className="greeting">Hi There!</h3>
           <p>Please enter your username:</p>
           <form onSubmit={this.handleWelcomeSubmit}>
             <input
