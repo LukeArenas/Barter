@@ -22,7 +22,7 @@ export default class Buy extends Component {
       const response = await axios.get(`${BASE_URL}/listings`)
       this.setState({ listings: response.data.allListings })
     } catch (error) {
-      alert(error)
+      console.log(error)
     }
   }
 
