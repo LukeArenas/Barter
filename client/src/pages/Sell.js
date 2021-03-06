@@ -54,7 +54,7 @@ export default class Sell extends Component {
   handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post(`${BASE_URL}/listings`, {
+      await axios.post(`${BASE_URL}/listings`, {
         title: this.state.title,
         condition: this.state.condition,
         description: this.state.description,

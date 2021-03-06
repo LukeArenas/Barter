@@ -27,9 +27,9 @@ export default class Buy extends Component {
   }
 
   formatRecentlyViewed = () => {
-    this.props.recentlyViewed.length > 5
+    return this.props.recentlyViewed.length > 5
       ? this.props.recentlyViewed.shift()
-      : console.log('ok')
+      : []
   }
 
   changeCatFilter = (event) => {

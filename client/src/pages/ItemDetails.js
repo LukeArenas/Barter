@@ -122,7 +122,7 @@ export default class ItemDetails extends Component {
             <button onClick={this.beginUpdate} className="cart-button">
               Update
             </button>
-          ) : this.state.vendor.seller != this.props.username ? (
+          ) : this.state.vendor.seller !== this.props.username ? (
             <div>
               <button className="cart-button" onClick={this.handleClick}>
                 Add To Cart
