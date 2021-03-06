@@ -133,24 +133,24 @@ footer {
 
 .shopping-image,
 .selling-image {
-  max-width: 30vw;
+  max-height: 35vh;
 }
 
 .first {
-  min-width: 30vw;
+  min-width: 40vw;
   margin: 0;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
 }
 
 .second {
-  min-width: 25vw;
+  min-width: 40vw;
   margin: 0;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  justify-content: right;
+  justify-content: center;
 }
 
 .welcome-text {
