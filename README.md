@@ -12,6 +12,8 @@
 
 Barter is a community-focused ecommerce app. It allows users to both list items they no longer need and buy items from their neighbors, all through a convenient medium. Customers are able to view the item's photo, price, description, condition, and the seller's customer rating before deciding to purchase or not. In addition, all shoppers will be able to see their recently viewed items.
 
+### **Check out my deployed project** [HERE](https://murmuring-beyond-05467.herokuapp.com/ )
+
 ***
 
 ### ***Project Planning***
